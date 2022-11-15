@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 4.1rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #2a2a2a;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3.9rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #2a2a2a;
+}
