@@ -1,29 +1,115 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
 
-html {
+:root {
   font-size: 62.5%;
-}
-
-body {
   font-family: "Work Sans", sans-serif;
   font-style: normal;
+
+  --color-primary: #2a2a2a;
+  --secondary-color: #ffffff;
+}
+
+html {
+  color : var(--color-primary);
 }
 
 h1 {
   font-weight: 400;
   font-size: 3.5rem;
-  line-height: 4.1rem;
-  letter-spacing: 0.05em;
+  line-height: 117%;
+  letter-spacing: 0.05rem;
+
   text-align: center;
-  color: #2a2a2a;
 }
 
 h2 {
   font-weight: 600;
   font-size: 3rem;
-  line-height: 3.9rem;
-  letter-spacing: 0.05em;
+  line-height: 130%;
+  letter-spacing: 0.05rem;
+
+  text-transform: uppercase;
+
   text-align: center;
-  letter-spacing: 0.05em;
-  color: #2a2a2a;
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 150%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.Intro {
+  line-height: 130%;
+  font-size: 2.86rem;
+}
+
+.volonteers {
+  background-color: #74C5FF;
+}
+
+.testimonials {
+  background-color: #FF6D8D;
+  text-align: center;
+}
+
+.boy-sec {
+  background-color: #2580C1;
+  color: var(--secondary-color);
+}
+
+footer {
+  background-color: #FFF2D6;
+}
+
+.License {
+  opacity: 0.3;
+}
+
+.footer-list {
+  font-size: 1.6rem;
+  line-height: 130%;
+}
+
+.follow {
+  line-height: 130%;
+  font-size: 1.6rem;
+}
+
+.festVol {
+  opacity: 0.7;
+}
+
+.linkBut {
+  border-radius: 0.5rem;
+  background-color: #6A19F5;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 116%;
+  text-align: center;
+  letter-spacing: 0.05rem;
+
+  /* display: block;
+  width: 34.5rem;
+  height: 5rem; */
+}
+
+.navEllipse {
+  /* убираем вид кнопки */
+  border: none;
+  padding: 0;
+
+  background-color: transparent;
+}
+
+ol {
+  list-style: none;
 }
