@@ -246,6 +246,7 @@ footer {
 
 .follow-img {
   display: flex;
+  flex-direction: row;
   gap: 3.6rem;
   justify-content: center;
 }
