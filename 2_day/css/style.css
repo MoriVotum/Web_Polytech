@@ -18,6 +18,7 @@ h1 {
   letter-spacing: 0.05rem;
 
   text-align: center;
+  padding-bottom: 3rem;
 }
 
 h2 {
@@ -37,6 +38,10 @@ p {
   line-height: 150%;
 }
 
+blockquote {
+  padding-top: 5rem;
+}
+
 a {
   text-decoration: none;
   color: var(--color-primary);
@@ -50,18 +55,31 @@ footer {
   background-color: #FFF2D6;
 }
 
-.Intro {
+.intro {
   line-height: 130%;
   font-size: 2.86rem;
 }
 
+.p-content {
+  padding-top: 2rem;
+}
+
 .volonteers {
   background-color: #74C5FF;
+
+  padding: 7.5rem 1.5rem 8.5rem 1.5rem;
 }
 
 .testimonials {
   background-color: #FF6D8D;
   text-align: center;
+
+  padding: 10rem 1.5rem 10rem 1.5rem;
+}
+
+.b-children-sec {
+  padding-top: 5rem;
+  padding-bottom: 10rem;
 }
 
 .boy-sec {
@@ -69,8 +87,10 @@ footer {
   color: var(--secondary-color);
 }
 
-.License {
+.license {
   opacity: 0.3;
+
+  padding: 3rem 0rem 8.9rem 1.5rem;
 }
 
 .footer-list {
@@ -83,11 +103,12 @@ footer {
   font-size: 1.6rem;
 }
 
-.festVol {
+.fest-vol {
   opacity: 0.7;
+  padding-bottom: 3rem;
 }
 
-.linkBut {
+.link-but {
   border-radius: 0.5rem;
   background-color: #6A19F5;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
@@ -104,10 +125,45 @@ footer {
   height: 5rem; */
 }
 
-.navEllipse {
+.nav-ellipse, .nav-ellipse-osoby {
   /* убираем вид кнопки */
+  display: inline-block;
   border: none;
   padding: 0;
+  margin-right: 1rem;
 
   background-color: transparent;
+}
+
+.nav-ellipse-osoby
+{
+  margin-right: 0rem;
+}
+
+.main-page
+{
+  display: inline-block;
+
+  padding: 1.5rem 0rem 1.5rem 1.5rem;
+}
+
+.menu {
+  /* position is on right of window */
+  padding: 2rem 1.5rem 2rem 0rem;
+}
+
+.volunter-info
+{
+  padding-bottom: 4.3rem;
+}
+
+.autor-name
+{
+  padding-top: 3rem;
+  padding-bottom: 0.5rem;
+}
+
+button{
+  border: none;
+  background: none;
 }
