@@ -230,6 +230,7 @@ footer {
   line-height: 130%;
 
   display: flex;
+  flex-direction: row;
   gap: 7.5rem;
   justify-content: center;
 }
