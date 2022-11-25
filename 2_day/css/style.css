@@ -140,10 +140,10 @@ footer {
 
   display: block;
   margin-top: 5rem;
-  padding: 1.5rem 6.6rem;
+  padding: 1.5rem 0rem;
+  text-align: center;
   max-width: 34.5rem;
   min-height: 5rem;
-  text-align: center;
 
   margin-left: auto;
   margin-right: auto;
