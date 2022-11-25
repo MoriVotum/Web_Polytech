@@ -8,7 +8,7 @@
   --color-primary: #2a2a2a;
   --secondary-color: #ffffff;
 
-  color : var(--color-primary);
+  color: var(--color-primary);
 }
 
 h1 {
@@ -18,7 +18,7 @@ h1 {
   letter-spacing: 0.05rem;
 
   text-align: center;
-  padding-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 h2 {
@@ -39,7 +39,7 @@ p {
 }
 
 blockquote {
-  padding-top: 5rem;
+  margin-top: 5rem;
 }
 
 a {
@@ -47,31 +47,42 @@ a {
   color: var(--color-primary);
 }
 
-ol {
+ol,
+ul {
   list-style: none;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 footer {
-  background-color: #FFF2D6;
+  background-color: #fff2d6;
+
+  padding-bottom: 8.9rem;
 }
 
 .intro {
   line-height: 130%;
   font-size: 2.86rem;
+
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .p-content {
-  padding-top: 2rem;
+  margin: 2rem 1.5rem 0rem 1.5rem;
 }
 
 .volonteers {
-  background-color: #74C5FF;
+  background-color: #74c5ff;
 
-  padding: 7.5rem 1.5rem 8.5rem 1.5rem;
+  padding: 7.5rem 0rem 8.5rem 0rem;
 }
 
 .testimonials {
-  background-color: #FF6D8D;
+  background-color: #ff6d8d;
   text-align: center;
 
   padding: 10rem 1.5rem 10rem 1.5rem;
@@ -83,87 +94,162 @@ footer {
 }
 
 .boy-sec {
-  background-color: #2580C1;
+  background-color: #2580c1;
   color: var(--secondary-color);
+
+  padding-top: 10.1rem;
+  padding-bottom: 10rem;
+}
+
+.festival-sec {
+  padding-top: 7.5rem;
+  padding-bottom: 10rem;
 }
 
 .license {
   opacity: 0.3;
 
-  padding: 3rem 0rem 8.9rem 1.5rem;
-}
-
-.footer-list {
-  font-size: 1.6rem;
-  line-height: 130%;
+  margin: 3rem 0rem 0rem 1.5rem;
 }
 
 .follow {
   line-height: 130%;
   font-size: 1.6rem;
+
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .fest-vol {
   opacity: 0.7;
-  padding-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .link-but {
+  text-transform: uppercase;
   border-radius: 0.5rem;
-  background-color: #6A19F5;
+  background-color: #6a19f5;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
 
   color: var(--secondary-color);
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 116%;
-  text-align: center;
   letter-spacing: 0.05rem;
 
-  /* display: block;
-  width: 34.5rem;
-  height: 5rem; */
+  display: block;
+  margin-top: 5rem;
+  padding: 1.5rem 6.6rem;
+  max-width: 34.5rem;
+  min-height: 5rem;
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.nav-ellipse, .nav-ellipse-osoby {
-  /* убираем вид кнопки */
-  display: inline-block;
-  border: none;
-  padding: 0;
-  margin-right: 1rem;
+.link-but-last {
+  margin-top: 3rem;
+}
 
+.nav-ellipse {
+  /* убираем вид кнопки */
+  padding: 0;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  border: 0.1rem solid var(--color-primary);
+  border-radius: 50%;
+  margin-right: 1rem;
   background-color: transparent;
 }
 
-.nav-ellipse-osoby
-{
+.nav-ellipse:last-child {
   margin-right: 0rem;
+  background-color: var(--color-primary);
 }
 
-.main-page
-{
+.main-page {
+  
   display: inline-block;
-
-  padding: 1.5rem 0rem 1.5rem 1.5rem;
+  margin: 1.5rem 0rem 1.5rem 1.5rem;
 }
 
 .menu {
   /* position is on right of window */
-  padding: 2rem 1.5rem 2rem 0rem;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 2rem 1.5rem 2rem 0rem;
 }
 
-.volunter-info
-{
-  padding-bottom: 4.3rem;
+.menu:hover {
+  cursor: pointer;
 }
 
-.autor-name
-{
-  padding-top: 3rem;
-  padding-bottom: 0.5rem;
+.volunter-info {
+  margin-bottom: 4.3rem;
 }
 
-button{
-  border: none;
-  background: none;
+.autor-name {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.img-in-section {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.b-children {
+  margin-bottom: 5rem;
+}
+
+.boy-img {
+  margin-bottom: 3rem;
+}
+
+.festival-img {
+  margin-bottom: 5rem;
+}
+
+.footer-end-text {
+  margin: 3rem 5.2rem 5rem 1.5rem;
+}
+
+.nav-menu-list {
+  display: none;
+}
+
+.footer-list {
+  font-size: 1.6rem;
+  line-height: 130%;
+
+  display: flex;
+  gap: 7.5rem;
+  justify-content: center;
+}
+
+.footer-column {
+  /* margin: 0rem 7.5rem 0rem 7.1rem; */
+  /* display: inline-block; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer-column:last-child {
+  margin-left: 0rem;
+  margin-right: 0;
+}
+
+.follow-img {
+  display: flex;
+  gap: 3.6rem;
+  justify-content: center;
 }
