@@ -38,6 +38,10 @@ p {
   line-height: 150%;
 }
 
+header {
+  padding: 1.5rem;
+}
+
 blockquote {
   margin-top: 5rem;
 }
@@ -60,25 +64,22 @@ button {
 footer {
   background-color: #fff2d6;
 
-  padding-bottom: 8.9rem;
+  padding: 0rem 1.5rem 8.9rem 1.5rem;
 }
 
 .intro {
   line-height: 130%;
   font-size: 2.86rem;
-
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
 }
 
 .p-content {
-  margin: 2rem 1.5rem 0rem 1.5rem;
+  margin-top: 2rem;
 }
 
 .volonteers {
   background-color: #74c5ff;
 
-  padding: 7.5rem 0rem 8.5rem 0rem;
+  padding: 7.5rem 1.5rem 8.5rem 1.5rem;
 }
 
 .testimonials {
@@ -89,27 +90,24 @@ footer {
 }
 
 .b-children-sec {
-  padding-top: 5rem;
-  padding-bottom: 10rem;
+  padding: 5rem 1.5rem 10rem 1.5rem;
 }
 
 .boy-sec {
   background-color: #2580c1;
   color: var(--secondary-color);
 
-  padding-top: 10.1rem;
-  padding-bottom: 10rem;
+  padding: 10.1rem 1.5rem 10rem 1.5rem;
 }
 
 .festival-sec {
-  padding-top: 7.5rem;
-  padding-bottom: 10rem;
+  padding: 7.5rem 1.5rem 10rem 1.5rem;
 }
 
 .license {
   opacity: 0.3;
 
-  margin: 3rem 0rem 0rem 1.5rem;
+  margin-top: 3rem;
 }
 
 .follow {
@@ -173,7 +171,8 @@ footer {
 
 .main-page {
   display: inline-block;
-  margin: 1.5rem 0rem 1.5rem 1.5rem;
+  /* margin: 1.5rem 0rem 1.5rem 1.5rem; */
+  margin-right: auto;
 }
 
 .menu {
@@ -199,13 +198,18 @@ footer {
 }
 
 .img-in-section {
+
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 .b-children {
-  margin-bottom: 5rem;
+  margin-bottom: 5rem; 
 }
 
 .boy-img {
@@ -217,7 +221,7 @@ footer {
 }
 
 .footer-end-text {
-  margin: 3rem 5.2rem 5rem 1.5rem;
+  margin: 3rem 3.7rem 5rem 0rem;
 }
 
 .nav-menu-list {
@@ -248,4 +252,12 @@ footer {
   flex-direction: row;
   gap: 3.6rem;
   justify-content: center;
+}
+
+.img-in-footer-section {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+  position: center;
 }
