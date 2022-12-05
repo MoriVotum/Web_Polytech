@@ -10,27 +10,29 @@
   </head>
   <body>
     <header>
+      <nav class="nav-menu-list sr-only">
       <a class="main-page" href="/index.html">
         <img
+          class="logo"
           src="img/Logo/Mathopolis-logo.svg"
           alt="main page"
           width="113"
           height="35"
         />
       </a>
+        <ul class="list-spisok">
+          <li class="nav-menu-li"><a href="/index.html">PUZZLES</a></li>
+          <li class="nav-menu-li"><a href="/index.html">GET INVOLVED</a></li>
+          <li class="nav-menu-li"><a href="/index.html">EVENTS</a></li>
+          <li class="nav-menu-li"><a href="/index.html">ABOUT</a></li>
+          <li class="nav-menu-li"><a href="/index.html">STORE</a></li>
+        </ul>
+
+        <a class="donate-but" href="/index.html">DONATE</a>
+      </nav>
       <button class="menu">
         <img src="img/Nav/Menu.svg" alt="Menu" width="35" height="25" />
       </button>
-      <nav class="nav-menu-list">
-        <ul>
-          <li><a href="/index.html">PUZZLES</a></li>
-          <li><a href="/index.html">GET INVOLVED</a></li>
-          <li><a href="/index.html">EVENTS</a></li>
-          <li><a href="/index.html">ABOUT</a></li>
-          <li><a href="/index.html">STORE</a></li>
-          <li><a href="/index.html">DONATE</a></li>
-        </ul>
-      </nav>
     </header>
     <main>
       <section class="volonteers">
@@ -44,7 +46,7 @@
           </p>
         </div>
         <img
-          class="img-in-section"
+          class="img-in-section white-lady-b-children"
           src="img/Sections/White-with-black.svg"
           alt="white lady with children"
           width="375"
@@ -52,7 +54,7 @@
         />
       </section>
       <section class="testimonials">
-        <h2>Testimonials</h2>
+        <h2 class="testiominals-h2">Testimonials</h2>
         <blockquote>
           <p>
             I am a biochemist, but I loved helping students explore a logic
@@ -81,14 +83,16 @@
           width="375"
           height="375"
         />
-        <h2>Lead an Activity</h2>
-        <p class="p-content">
-          Play a puzzle with kids at a virtual math circle or in-person
-          festival. Volunteers lead our puzzles by encouraging independent
-          exploration and asking strategic questions to help with deeper
-          thinking.
-        </p>
-        <a href="/index.html" class="link-but">ATTEND A WORKSHOP</a>
+        <div class="b-children-info">
+          <h2>Lead an Activity</h2>
+          <p class="p-content">
+            Play a puzzle with kids at a virtual math circle or in-person
+            festival. Volunteers lead our puzzles by encouraging independent
+            exploration and asking strategic questions to help with deeper
+            thinking.
+          </p>
+          <a href="/index.html" class="link-but">ATTEND A WORKSHOP</a>
+        </div>
       </section>
       <section class="boy-sec">
         <img
@@ -98,14 +102,16 @@
           width="375"
           height="263"
         />
-        <h2>Run a Classroom Visit</h2>
-        <p class="p-content">
-          Lead virtual classroom visits in your neighborhood elementary or
-          middle school. We train volunteers (including high school and college
-          students) on how to manage this virtual outreach activity. The only
-          thing you need to bring is an open mind and the desire to bring fun
-          math into a kid’s life.
-        </p>
+        <div class="boy-sec-info">
+          <h2>Run a Classroom Visit</h2>
+          <p class="p-content">
+            Lead virtual classroom visits in your neighborhood elementary or
+            middle school. We train volunteers (including high school and
+            college students) on how to manage this virtual outreach activity.
+            The only thing you need to bring is an open mind and the desire to
+            bring fun math into a kid’s life.
+          </p>
+        </div>
       </section>
       <section class="festival-sec">
         <img
@@ -115,93 +121,107 @@
           width="375"
           height="304"
         />
-        <h2>Host a Festival</h2>
-        <p class="p-content">
-          A math festival is a one-time event where children gather and explore
-          math through puzzles. Our festivals are hosted by volunteers who want
-          to connect the children in their community with a joyful math
-          experience. We have all the resources you need to host a festival.
-        </p>
-        <a href="/index.html" class="link-but">learn more</a>
+        <div class="festival-sec-info">
+          <h2>Host a Festival</h2>
+          <p class="p-content">
+            A math festival is a one-time event where children gather and
+            explore math through puzzles. Our festivals are hosted by volunteers
+            who want to connect the children in their community with a joyful
+            math experience. We have all the resources you need to host a
+            festival.
+          </p>
+          <a href="/index.html" class="link-but">learn more</a>
+        </div>
       </section>
     </main>
     <footer>
-      <img
-        class="img-in-footer-section"
-        src="img/Logo/Mathopolis-logo-footer.svg"
-        alt="Mathopolis"
-        width="345"
-        height="172"
-      />
-      <p class="footer-end-text">
-        We're a fiscally-sponsored project of a 501(c)3, Social and
-        Environmental Entrepreneurs.
-      </p>
-      <div class="footer-list">
-        <ul class="footer-column">
-          <li>
-            <a href="/index.html">STUDENTS</a>
-          </li>
-          <li>
-            <a href="/index.html">PARENTS</a>
-          </li>
-          <li>
-            <a href="/index.html">TEACHERS</a>
-          </li>
-          <li>
-            <a href="/index.html">Volunteers</a>
-          </li>
-          <li>
-            <a href="/index.html">EVENTS</a>
-          </li>
-        </ul>
-        <ul class="footer-column">
-          <li>
-            <a href="/index.html">PUZZLES</a>
-          </li>
-          <li>
-            <a href="/index.html">ABOUT</a>
-          </li>
-          <li>
-            <a href="/index.html">NEWS</a>
-          </li>
-          <li>
-            <a href="/index.html">STORE</a>
-          </li>
-          <li>
-            <a href="/index.html">DONATE</a>
-          </li>
-        </ul>
+      <div class="footer-flex">
+        <div class="base-info">
+          <img
+            class="img-in-footer-section"
+            src="img/Logo/Mathopolis-logo-footer.svg"
+            alt="Mathopolis"
+            width="345"
+            height="172"
+          />
+          <p class="footer-end-text">
+            We're a fiscally-sponsored project of a 501(c)3, Social and
+            Environmental Entrepreneurs.
+          </p>
+        </div>
+
+        <div class="footer-list">
+          <ul class="footer-column">
+            <li>
+              <a href="/index.html">STUDENTS</a>
+            </li>
+            <li>
+              <a href="/index.html">PARENTS</a>
+            </li>
+            <li>
+              <a href="/index.html">TEACHERS</a>
+            </li>
+            <li>
+              <a href="/index.html">Volunteers</a>
+            </li>
+            <li>
+              <a href="/index.html">EVENTS</a>
+            </li>
+          </ul>
+          <ul class="footer-column">
+            <li>
+              <a href="/index.html">PUZZLES</a>
+            </li>
+            <li>
+              <a href="/index.html">ABOUT</a>
+            </li>
+            <li>
+              <a href="/index.html">NEWS</a>
+            </li>
+            <li>
+              <a href="/index.html">STORE</a>
+            </li>
+            <li>
+              <a href="/index.html">DONATE</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="other-info">
+          <p class="follow">Follow us:</p>
+          <ul class="follow-img">
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/twitter.svg" alt="twitter"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/Linkedln.svg" alt="Linkedln"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/instagramm.svg" alt="instagramm"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/facebook.svg" alt="facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/youtube.svg" alt="youtube"
+              /></a>
+            </li>
+          </ul>
+          <a href="/index.html" class="link-but link-but-last"
+            >SUPPORT OUR CAUSE</a
+          >
+        </div>
       </div>
-      <p class="follow">Follow us:</p>
-      <ul class="follow-img">
-        <li>
-          <a href="/index.html"
-            ><img src="img/FollowUs/twitter.svg" alt="twitter"
-          /></a>
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img src="img/FollowUs/Linkedln.svg" alt="Linkedln"
-          /></a>
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img src="img/FollowUs/instagramm.svg" alt="instagramm"
-          /></a>
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img src="img/FollowUs/facebook.svg" alt="facebook"
-          /></a>
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img src="img/FollowUs/youtube.svg" alt="youtube"
-          /></a>
-        </li>
-      </ul>
-      <a href="/index.html" class="link-but link-but-last">SUPPORT OUR CAUSE</a>
+
       <p class="license">© 2007–2022 Mathopolis</p>
     </footer>
   </body>

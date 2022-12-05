@@ -39,11 +39,19 @@ p {
 }
 
 header {
+  display: flex;
+  /* justify-content: center; */
+  justify-content: left;
+  align-items: center;
   padding: 1.5rem;
 }
 
 blockquote {
   margin-top: 5rem;
+
+  max-width: 870px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
@@ -72,14 +80,38 @@ footer {
   font-size: 2.86rem;
 }
 
+.donate-but {
+  display: none;
+
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  background-color: #F9523B;
+
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.8rem;
+
+  padding: 1.5rem 4.2rem;
+  text-align: center;
+}
+
 .p-content {
   margin-top: 2rem;
+}
+
+.otstip-sec {
 }
 
 .volonteers {
   background-color: #74c5ff;
 
-  padding: 7.5rem 1.5rem 8.5rem 1.5rem;
+  padding: 7.5rem 0rem 8.5rem 0rem;
+}
+
+.volunter-info {  
+  margin-bottom: 4.3rem;
+  
+  padding: 0rem 1.5rem 0rem 1.5rem;
 }
 
 .testimonials {
@@ -90,18 +122,30 @@ footer {
 }
 
 .b-children-sec {
-  padding: 5rem 1.5rem 10rem 1.5rem;
+  padding: 5rem 0rem 10rem 0rem;
+}
+
+.b-children-info {
+  padding: 0rem 1.5rem 0rem 1.5rem;
 }
 
 .boy-sec {
   background-color: #2580c1;
   color: var(--secondary-color);
 
-  padding: 10.1rem 1.5rem 10rem 1.5rem;
+  padding: 10.1rem 0rem 10rem 0rem;
+}
+
+.boy-sec-info {
+  padding: 0rem 1.5rem 0rem 1.5rem;
 }
 
 .festival-sec {
-  padding: 7.5rem 1.5rem 10rem 1.5rem;
+  padding: 7.5rem 0rem 10rem 0rem;
+}
+
+.festival-sec-info {
+  padding: 0rem 1.5rem 0rem 1.5rem;
 }
 
 .license {
@@ -170,9 +214,18 @@ footer {
 }
 
 .main-page {
-  display: inline-block;
+  display: flex;
+  width: 100%;
+  height: auto;
+  max-width: 260px;
   /* margin: 1.5rem 0rem 1.5rem 1.5rem; */
-  margin-right: auto;
+  /* margin-right: auto; */
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 260px;
 }
 
 .menu {
@@ -188,10 +241,6 @@ footer {
   cursor: pointer;
 }
 
-.volunter-info {
-  margin-bottom: 4.3rem;
-}
-
 .autor-name {
   margin-top: 3rem;
   margin-bottom: 0.5rem;
@@ -200,20 +249,33 @@ footer {
 .img-in-section {
   display: block;
 
-  margin-left: calc((100vw - 375px) / 2 - 1.5rem);
-  margin-right: calc((100vw - 375px) / 2 - 1.5rem);
+  /* margin-left: calc((100vw - 375px) / 2 - 1.5rem);
+  margin-right: calc((100vw - 375px) / 2 - 1.5rem); */
+
+  width: 100%;
+  height: auto;
+}
+
+.white-lady-b-children {
+  /* max-width: 660px; */
 }
 
 .b-children {
   margin-bottom: 5rem; 
+
+  /* max-width: 1017px; */
 }
 
 .boy-img {
   margin-bottom: 3rem;
+
+  max-width: 926px;
 }
 
 .festival-img {
   margin-bottom: 5rem;
+
+  max-width: 884px;
 }
 
 .footer-end-text {
@@ -221,8 +283,25 @@ footer {
 }
 
 .nav-menu-list {
+  display: block;
+}
+
+.list-spisok {
   display: none;
 }
+
+/* .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+} */
 
 .footer-list {
   font-size: 1.6rem;
@@ -254,6 +333,188 @@ footer {
   margin-left: auto;
   margin-right: auto;
 
+  width: 100%;
+
   display: block;
   position: center;
+}
+
+.base-info {
+  max-width: 345px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 375px){
+  .follow-img {
+    flex-direction: row;
+    gap: 0rem;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 750px){
+  
+  h1 {
+    text-align: left;
+    font-size: 5.6rem;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .img-in-section {
+    width: 40%;
+  }
+
+  .nav-menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+  }
+
+  .list-spisok {
+    display: flex;
+    flex-direction: row;
+    /* gap: 1.5rem; */
+    flex-grow: 1;
+    max-width: 600px;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .donate-but {
+    display: block;
+  }
+
+  .volonteers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .volunter-info {
+    width: 50%;
+    max-width: 775px;
+  }
+
+  .b-children-sec {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .b-children-info {
+    width: 50%;
+    max-width: 590px;
+  }
+
+  .testiominals-h2 {
+    text-align: center;
+  }
+
+  .boy-sec {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .boy-sec-info {
+    width: 50%;
+    max-width: 548px;
+  }
+
+  .festival-sec {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .festival-sec-info {
+    width: 50%;
+    max-width: 589px;
+  }
+
+  .license {
+    display: block;
+    position: absolute;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .link-but {
+    margin-left: 0;
+  }
+
+  .link-but:last-child {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1024px){
+
+  .base-info {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .footer-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer-list {
+    display: flex;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .link-but:last-child {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .list-spisok {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .follow-img {
+    margin-top: 2.2rem;
+    margin-bottom: 5.5rem;
+  }
+
+  .follow {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1240px){
+  h1 {
+    text-align: left;
+    font-size: 9.6rem;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 5.2rem;
+    font-weight: 600;
+    text-align: left;
+  }
 }
