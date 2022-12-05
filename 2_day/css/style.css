@@ -386,6 +386,10 @@ footer {
   display: none;
 }
 
+.testim-control:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 375px) {
   .follow-img {
     flex-direction: row;
