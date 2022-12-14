@@ -470,17 +470,17 @@ footer {
   }
 
   .volonteers-bg {
-    /* background-color: #74c5ff; */
+    background-color: #74c5ff;
     background-image: url(/img/Sections/volunteers-bg-small.png);
   }
   
   .boy-sec-bg {
-    /* background-color: #2580c1; */
+    background-color: #2580c1;
     background-image: url(/img/Sections/boy-blue-small.png);
   }
   
   .testimonials-bg {
-    /* background-color: #ff6d8d; */
+    background-color: #ff6d8d;
     margin-top: -5rem;
     padding-top: 5rem;
     background-image: url(/img/Sections/testimonials-bg-small.png);
