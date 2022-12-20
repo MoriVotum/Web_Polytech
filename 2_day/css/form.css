@@ -86,6 +86,38 @@ legend {
   transform: scale(1.1);
 }
 
+.donate-but {
+  transition: 0.4s;
+}
+
+@media (max-width: 1024px) {
+  .donate-but:active {
+    background-color: rgb(255, 213, 135);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 1.2rem;
+    margin: 0rem 2.44rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .donate-but:active {
+    background-color: rgb(255, 213, 135);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 1.2rem;
+    margin: 0.5rem 3.65rem;
+  }
+}
+
+.donate-but:hover {
+  cursor: pointer;
+}
+
 .day {
   display: flex;
   flex-direction: row;
