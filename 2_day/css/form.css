@@ -75,6 +75,11 @@ legend {
   margin-bottom: 1rem;
 }
 
+*::selection {
+  /* background-color: rgb(217, 219, 255); */
+  background-color: rgb(255, 213, 135);
+}
+
 .button-end-form:hover {
   cursor: pointer;
 
