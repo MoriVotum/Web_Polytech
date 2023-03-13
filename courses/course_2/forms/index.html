@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Макет</title>
+    <link rel="stylesheet" href="css/reseter.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="forModal">
+    <div class="overModal">
+      <div class="myModal hidden">
+        <form name="contact" class="form-send">
+          <fieldset class="main-info">
+            <legend>Личная информация</legend>
+            <label>
+              Почта
+              <input type="email" name="email" placeholder="Почта" required />
+            </label>
+            <label>
+              Пароль
+              <input
+                class="pswd"
+                type="password"
+                name="password"
+                minlength="6"
+                placeholder="Пароль"
+                required
+              />
+            </label>
+          </fieldset>
+          <div class="error-message">Неверный логин или пароль</div>
+          <div class="buttons-submit">
+            <button type="submit" class="button-end-form subBut">
+              <img src="./img/Form/send.svg" alt="" width="25" />
+              <span>Отправить</span>
+            </button>
+            <button class="button-end-form showPass">
+              <img src="./img/Form/reset.svg" alt="" width="25" />
+              <span>Показать пароль</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <header>
+      <nav class="nav-menu-list sr-only">
+        <a class="main-page" href="/index.html">
+          <img
+            class="logo"
+            src="img/Logo/Mathopolis-logo.svg"
+            alt="main page"
+            width="113"
+            height="35"
+          />
+        </a>
+        <ul class="list-spisok">
+          <li class="nav-menu-li"><a href="/index.html">PUZZLES</a></li>
+          <li class="nav-menu-li">
+            <a href="/index.html">GET INVOLVED</a>
+            <img class="nav-arrow" src="/img/Nav/Spisok.svg" alt="" />
+          </li>
+          <li class="nav-menu-li">
+            <a href="/index.html">EVENTS</a>
+            <img class="nav-arrow" src="/img/Nav/Spisok.svg" alt="" />
+          </li>
+          <li class="nav-menu-li">
+            <a href="/index.html">ABOUT</a>
+            <img class="nav-arrow" src="/img/Nav/Spisok.svg" alt="" />
+          </li>
+          <li class="nav-menu-li"><a href="/index.html">STORE</a></li>
+        </ul>
+
+        <button
+          class="donate-but registratrion"
+          id="doModal"
+          href="/index.html"
+        >
+          Sign up
+        </button>
+
+        <a class="donate-but" href="/index.html">DONATE</a>
+      </nav>
+      <button class="menu">
+        <img src="img/Nav/Menu.svg" alt="Menu" width="35" height="25" />
+      </button>
+    </header>
+    <main>
+      <div class="volonteers-bg">
+        <section class="volonteers">
+          <div class="volunter-info">
+            <h1>VOLUNTEERS</h1>
+            <p class="intro">Make magical math moments in your community.</p>
+            <p class="p-content">
+              Mathopolis relies on volunteers to help create magical math
+              moments for kids. We have a number of ways to get involved, from
+              playing math puzzles in a virtual classroom to hosting your own
+              festival.
+            </p>
+          </div>
+          <img
+            class="img-in-section white-lady-b-children"
+            src="img/Sections/White-with-black.png"
+            alt="white lady with children"
+            width="375"
+            height="305"
+          />
+        </section>
+      </div>
+      <div class="testimonials-bg">
+        <section class="testimonials">
+          <h2 class="testiominals-h2">Testimonials</h2>
+          <blockquote>
+            <img
+              src="/img/Nav/Testimonials-left.svg"
+              class="testim-control"
+              alt=""
+            />
+            <p class="quote">
+              I am a biochemist, but I loved helping students explore a logic
+              puzzle about a pirate captain and crew (complete with pirate
+              hats).
+            </p>
+            <img
+              src="/img/Nav/Testimonials-right.svg"
+              class="testim-control"
+              alt=""
+            />
+          </blockquote>
+          <p class="autor-name">David H.</p>
+          <p class="fest-vol">Festival Volunteer</p>
+          <ol>
+            <li class="nav-ellipse">
+              <button></button>
+            </li>
+            <li class="nav-ellipse">
+              <button></button>
+            </li>
+            <li class="nav-ellipse">
+              <button></button>
+            </li>
+          </ol>
+        </section>
+      </div>
+      <section class="b-children-sec">
+        <img
+          class="img-in-section b-children"
+          src="./img/Sections/black-children-optimized.png"
+          alt="black children"
+          width="375"
+          height="375"
+        />
+        <div class="b-children-info">
+          <h2>Lead an Activity</h2>
+          <p class="p-content">
+            Play a puzzle with kids at a virtual math circle or in-person
+            festival. Volunteers lead our puzzles by encouraging independent
+            exploration and asking strategic questions to help with deeper
+            thinking.
+          </p>
+          <a href="/index.html" class="link-but long">
+            <div class="gradient-text">ATTEND A WORKSHOP</div>
+          </a>
+        </div>
+      </section>
+      <div class="boy-sec-bg">
+        <section class="boy-sec">
+          <img
+            class="img-in-section boy-img"
+            src="./img/Sections/boy-playes.png"
+            alt="boy plays"
+            width="375"
+            height="263"
+          />
+          <div class="boy-sec-info">
+            <h2>Run a Classroom Visit</h2>
+            <p class="p-content">
+              Lead virtual classroom visits in your neighborhood elementary or
+              middle school. We train volunteers (including high school and
+              college students) on how to manage this virtual outreach activity.
+              The only thing you need to bring is an open mind and the desire to
+              bring fun math into a kid’s life.
+            </p>
+            <a href="/index.html" class="link-but medium yellow-but">
+              <div class="gradient-text">VOLUNTEER</div>
+            </a>
+          </div>
+        </section>
+      </div>
+      <section class="festival-sec">
+        <img
+          class="img-in-section festival-img"
+          src="./img/Sections/festival-optimized.png"
+          alt="festival"
+          width="375"
+          height="304"
+        />
+        <div class="festival-sec-info">
+          <h2>Host a Festival</h2>
+          <p class="p-content">
+            A math festival is a one-time event where children gather and
+            explore math through puzzles. Our festivals are hosted by volunteers
+            who want to connect the children in their community with a joyful
+            math experience. We have all the resources you need to host a
+            festival.
+          </p>
+          <a href="/index.html" class="link-but medium">
+            <div class="gradient-text">learn more</div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-flex">
+        <div class="base-info">
+          <img
+            class="img-in-footer-section"
+            src="img/Logo/Mathopolis-logo-footer.svg"
+            alt="Mathopolis"
+            width="345"
+            height="172"
+          />
+          <p class="footer-end-text">
+            We're a fiscally-sponsored project of a 501(c)3, Social and
+            Environmental Entrepreneurs.
+          </p>
+          <p class="license-dop">© 2007–2022 Mathopolis</p>
+        </div>
+
+        <div class="footer-list">
+          <ul class="footer-column">
+            <li>
+              <a href="/index.html">STUDENTS</a>
+            </li>
+            <li>
+              <a href="/index.html">PARENTS</a>
+            </li>
+            <li>
+              <a href="/index.html">TEACHERS</a>
+            </li>
+            <li>
+              <a href="/index.html">Volunteers</a>
+            </li>
+            <li>
+              <a href="/index.html">EVENTS</a>
+            </li>
+          </ul>
+          <ul class="footer-column">
+            <li>
+              <a href="/index.html">PUZZLES</a>
+            </li>
+            <li>
+              <a href="/index.html">ABOUT</a>
+            </li>
+            <li>
+              <a href="/index.html">NEWS</a>
+            </li>
+            <li>
+              <a href="/index.html">STORE</a>
+            </li>
+            <li>
+              <a href="/index.html">DONATE</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="other-info">
+          <p class="follow">Follow us:</p>
+          <ul class="follow-img">
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/twitter.svg" alt="twitter"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/Linkedln.svg" alt="Linkedln"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/instagramm.svg" alt="instagramm"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/facebook.svg" alt="facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="/index.html"
+                ><img src="img/FollowUs/youtube.svg" alt="youtube"
+              /></a>
+            </li>
+          </ul>
+          <a href="./pages/form.html" class="link-but link-but-last">
+            <div class="gradient-text">SUPPORT OUR CAUSE</div>
+          </a>
+        </div>
+        <p class="license">© 2007–2022 Mathopolis</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

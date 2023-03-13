@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reseter.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-menu-list sr-only">
+        <a class="main-page" href="../index.html">
+          <img
+            class="logo"
+            src="../img/Logo/Mathopolis-logo.svg"
+            alt="main page"
+            width="113"
+            height="35"
+          />
+        </a>
+        <ul class="list-spisok">
+          <li class="nav-menu-li"><a href="/index.html">PUZZLES</a></li>
+          <li class="nav-menu-li">
+            <a href="../index.html">GET INVOLVED</a>
+            <img class="nav-arrow" src="../img/Nav/Spisok.svg" alt="" />
+          </li>
+          <li class="nav-menu-li">
+            <a href="../index.html">EVENTS</a>
+            <img class="nav-arrow" src="../img/Nav/Spisok.svg" alt="" />
+          </li>
+          <li class="nav-menu-li">
+            <a href="../index.html">ABOUT</a>
+            <img class="nav-arrow" src="../img/Nav/Spisok.svg" alt="" />
+          </li>
+          <li class="nav-menu-li"><a href="../index.html">STORE</a></li>
+        </ul>
+
+        <button class="donate-but">DONATE</button>
+      </nav>
+      <button class="menu">
+        <img src="../img/Nav/Menu.svg" alt="Menu" width="35" height="25" />
+      </button>
+    </header>
+    <main>
+      <!-- Начало формы -->
+      <form name="contact" method="POST" data-netlify="true" class="form-send">
+        <fieldset class="main-info">
+          <legend>Личная информация</legend>
+          <label>
+            Имя
+            <input type="text" name="name" placeholder="Имя" required />
+          </label>
+          <label>
+            Дата рождения
+            <input type="date" name="date_of_born" />
+          </label>
+          <label>
+            Выбор пола
+            <select name="orintation" id="sex">
+              <option value="Мужской">Мужской</option>
+              <option value="Женский">Женский</option>
+            </select>
+          </label>
+          <label>
+            Пароль
+            <input
+              type="password"
+              name="password"
+              placeholder="Пароль"
+              required
+            />
+          </label>
+          <label>
+            Почта
+            <input type="email" name="email" placeholder="Почта" required />
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Контактные данные</legend>
+          <label>
+            Телефон
+            <input type="tel" name="phone_number" placeholder="Телефон" />
+          </label>
+          Выбор удобного времени
+          <!-- in checkboxes -->
+          <div class="day">
+            <label for="morning">утро</label>
+            <input type="checkbox" id="morning" name="easy-time" value="утро" />
+          </div>
+          <div class="day">
+            <label for="day">день</label>
+            <input type="checkbox" id="day" name="easy-time" value="день" />
+          </div>
+          <div class="day">
+            <label for="evening">вечер</label>
+            <input
+              type="checkbox"
+              id="evening"
+              name="easy-time"
+              value="вечер"
+            />
+          </div>
+          <div class="day">
+            <label for="night">ночь</label>
+            <input type="checkbox" id="night" name="easy-time" value="ночь" />
+          </div>
+          <label>
+            Сообщение
+            <textarea name="message" placeholder="Сообщение"></textarea>
+          </label>
+        </fieldset>
+        <div class="buttons-submit">
+          <button type="submit" class="button-end-form">
+            <img src="../img/Form/send.svg" alt="" width="25" />
+            <span>Отправить</span>
+          </button>
+          <button type="reset" class="button-end-form">
+            <img src="../img/Form/reset.svg" alt="" width="25" />
+            <span>Очистить</span>
+          </button>
+        </div>
+      </form>
+      <!-- Конец формы -->
+    </main>
+    <footer>
+      <div class="footer-flex">
+        <div class="base-info">
+          <img
+            class="img-in-footer-section"
+            src="../img/Logo/Mathopolis-logo-footer.svg"
+            alt="Mathopolis"
+            width="345"
+            height="172"
+          />
+          <p class="footer-end-text">
+            We're a fiscally-sponsored project of a 501(c)3, Social and
+            Environmental Entrepreneurs.
+          </p>
+          <p class="license-dop">© 2007–2022 Mathopolis</p>
+        </div>
+
+        <div class="footer-list">
+          <ul class="footer-column">
+            <li>
+              <a href="../index.html">STUDENTS</a>
+            </li>
+            <li>
+              <a href="../index.html">PARENTS</a>
+            </li>
+            <li>
+              <a href="../index.html">TEACHERS</a>
+            </li>
+            <li>
+              <a href="../index.html">Volunteers</a>
+            </li>
+            <li>
+              <a href="../index.html">EVENTS</a>
+            </li>
+          </ul>
+          <ul class="footer-column">
+            <li>
+              <a href="../index.html">PUZZLES</a>
+            </li>
+            <li>
+              <a href="../index.html">ABOUT</a>
+            </li>
+            <li>
+              <a href="../index.html">NEWS</a>
+            </li>
+            <li>
+              <a href="../index.html">STORE</a>
+            </li>
+            <li>
+              <a href="../index.html">DONATE</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="other-info">
+          <p class="follow">Follow us:</p>
+          <ul class="follow-img">
+            <li>
+              <a href="../index.html"
+                ><img src="../img/FollowUs/twitter.svg" alt="twitter"
+              /></a>
+            </li>
+            <li>
+              <a href="../index.html"
+                ><img src="../img/FollowUs/Linkedln.svg" alt="Linkedln"
+              /></a>
+            </li>
+            <li>
+              <a href="../index.html"
+                ><img src="../img/FollowUs/instagramm.svg" alt="instagramm"
+              /></a>
+            </li>
+            <li>
+              <a href="../index.html"
+                ><img src="../img/FollowUs/facebook.svg" alt="facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="../index.html"
+                ><img src="../img/FollowUs/youtube.svg" alt="youtube"
+              /></a>
+            </li>
+          </ul>
+          <a href="../pages/form.html" class="link-but link-but-last">
+            <div class="gradient-text">SUPPORT OUR CAUSE</div>
+          </a>
+        </div>
+        <p class="license">© 2007–2022 Mathopolis</p>
+      </div>
+    </footer>
+  </body>
+</html>

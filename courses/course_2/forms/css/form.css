@@ -1,0 +1,141 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.form-send {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1rem auto;
+  min-height: 400px;
+  max-width: 700px;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+label {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+label > input {
+  margin-top: 0.5rem;
+}
+
+label > textarea {
+  margin-top: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  min-height: 30px;
+  height: 4vh;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+input:focus {
+  background-color: rgb(217, 219, 255);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.buttons-submit {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.button-end-form {
+  min-width: 120px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+
+  transition: 0.4s;
+}
+
+fieldset {
+  padding: 1rem;
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+*::selection {
+  /* background-color: rgb(217, 219, 255); */
+  background-color: rgb(255, 213, 135);
+}
+
+.button-end-form:hover {
+  cursor: pointer;
+
+  transform: scale(1.1);
+}
+
+.donate-but {
+  transition: 0.4s;
+}
+
+@media (max-width: 1024px) {
+  .donate-but:active {
+    background-color: rgb(255, 213, 135);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 1.2rem;
+    margin: 0rem 2.44rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .donate-but:active {
+    background-color: rgb(255, 213, 135);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 1.2rem;
+    margin: 0.5rem 3.65rem;
+  }
+}
+
+.donate-but:hover {
+  cursor: pointer;
+}
+
+.day {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem auto;
+  width: 30%;
+}
+
+.day > input {
+  width: auto;
+}
+
+span {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  span {
+    font-size: 1.5rem;
+  }
+}

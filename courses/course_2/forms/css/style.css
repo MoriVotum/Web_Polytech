@@ -1,0 +1,819 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  font-size: 62.5%;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+
+  --color-primary: #2a2a2a;
+  --secondary-color: #ffffff;
+
+  color: var(--color-primary);
+}
+
+header,
+.volonteers,
+.testimonials,
+.b-children-sec,
+.boy-sec,
+.festival-sec {
+  max-width: 1920px;
+  margin: auto;
+}
+
+.volonteers-bg {
+  /* background-color: #74c5ff; */
+  background-image: url(../img/Sections/volunteers-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.boy-sec-bg {
+  background-color: #2580c1;
+  background-image: url(../img/Sections/boy-blue.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.testimonials-bg {
+  background-color: #ff6d8d;
+  background-image: url(../img/Sections/testimonials-bg.jpg);
+  background-repeat: no-repeat;
+  margin-top: -3rem;
+  padding-top: 3rem;
+  margin-bottom: -3rem;
+  padding-bottom: 3rem;
+  background-size: 100% 100%;
+  /* position: relative; top: -20px; */
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 117%;
+  letter-spacing: 0.05rem;
+
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 130%;
+  letter-spacing: 0.05rem;
+
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 150%;
+}
+
+header {
+  display: flex;
+  /* justify-content: center; */
+  justify-content: left;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+blockquote {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-grow: 1;
+
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote {
+  max-width: 870px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+footer {
+  background-color: #fff2d6;
+
+  padding: 0rem 1.5rem 8.9rem 1.5rem;
+}
+
+.intro {
+  line-height: 130%;
+  font-size: 2.86rem;
+}
+
+.donate-but {
+  display: none;
+
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  background-color: #f9523b;
+
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.8rem;
+
+  padding: 1.5rem 4.2rem;
+  text-align: center;
+}
+
+.p-content {
+  margin-top: 2rem;
+}
+
+.volonteers {
+  background-color: transparent;
+
+  padding: 7.5rem 0rem 8.5rem 0rem;
+}
+
+.volunter-info {
+  margin-bottom: 4.3rem;
+  padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+.testimonials {
+  background-color: transparent;
+  text-align: center;
+
+  /* 10 + 3 = 13 */
+  padding: 10rem 1.5rem 10rem 1.5rem;
+}
+
+.b-children-sec {
+  padding: 5rem 0rem 10rem 0rem;
+}
+
+.b-children-info {
+  padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+.boy-sec {
+  background-color: transparent;
+  color: var(--secondary-color);
+
+  padding: 10.1rem 0rem 10rem 0rem;
+}
+
+.boy-sec-info {
+  padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+.festival-sec {
+  padding: 7.5rem 0rem 10rem 0rem;
+}
+
+.festival-sec-info {
+  padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+.license,
+.license-dop {
+  display: block;
+  opacity: 0.3;
+  margin-top: 3rem;
+}
+
+.follow {
+  line-height: 130%;
+  font-size: 1.6rem;
+
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.fest-vol {
+  opacity: 0.7;
+  margin-bottom: 3rem;
+}
+
+.link-but {
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  background-color: #6a19f5;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.05);
+
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 116%;
+  letter-spacing: 0.05rem;
+
+  display: block;
+  margin-top: 5rem;
+  padding: 1.5rem 0rem;
+  text-align: center;
+  max-width: 34.5rem;
+  min-height: 5rem;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-but-last {
+  margin-top: 3rem;
+}
+
+.nav-ellipse {
+  /* убираем вид кнопки */
+  padding: 0;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  border: 0.1rem solid var(--color-primary);
+  border-radius: 50%;
+  margin-right: 1rem;
+  background-color: transparent;
+}
+
+.nav-ellipse:last-child {
+  margin-right: 0rem;
+  background-color: var(--color-primary);
+}
+
+.main-page {
+  display: flex;
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+  /* margin: 1.5rem 0rem 1.5rem 1.5rem; */
+  /* margin-right: auto; */
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+  /* margin: -1rem; */
+}
+
+.menu {
+  /* position is on right of window */
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2rem 1.5rem 2rem 0rem;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.autor-name {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.img-in-section {
+  display: block;
+
+  /* margin-left: calc((100vw - 375px) / 2 - 1.5rem);
+  margin-right: calc((100vw - 375px) / 2 - 1.5rem); */
+
+  width: 100%;
+  height: auto;
+}
+
+.b-children {
+  margin-bottom: 5rem;
+
+  /* max-width: 1017px; */
+}
+
+.boy-img {
+  margin-bottom: 3rem;
+
+  max-width: 926px;
+}
+
+.festival-img {
+  margin-bottom: 5rem;
+
+  max-width: 884px;
+}
+
+.footer-end-text {
+  margin: 3rem 3.7rem 5rem 0rem;
+}
+
+.nav-menu-list {
+  display: block;
+}
+
+.nav-menu-li {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.list-spisok {
+  display: none;
+}
+
+/* .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+} */
+
+.footer-list {
+  font-size: 1.6rem;
+  line-height: 130%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 7.5rem;
+  justify-content: center;
+}
+
+.footer-column {
+  /* margin: 0rem 7.5rem 0rem 7.1rem; */
+  /* display: inline-block; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.follow-img {
+  display: flex;
+  flex-direction: row;
+  gap: 3.6rem;
+  justify-content: center;
+}
+
+.img-in-footer-section {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100%;
+
+  display: block;
+  position: center;
+}
+
+.base-info {
+  max-width: 345px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-arrow:hover {
+  cursor: pointer;
+}
+
+.footer-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.yellow-but {
+  display: none;
+  background-color: #f6c55a;
+  color: var(--color-primary);
+}
+
+.testim-control {
+  display: none;
+}
+
+.testim-control:hover {
+  cursor: pointer;
+}
+
+.link-but:hover {
+  /* box-shadow: 0px 0px 15px #ac4437; */
+  animation: shadow 1.5s infinite;
+}
+
+.gradint-text {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 116%;
+  letter-spacing: 0.05rem;
+}
+
+.link-but:hover .gradient-text {
+  background: linear-gradient(90deg, #fff6f5 0%, #d52222 50%, #fff6f5 100%);
+  background-size: 150%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradient 1.5s infinite;
+}
+
+.registratrion {
+  background-color: #f6c55a;
+  color: #2a2a2a;
+  font-size: 1.5rem;
+}
+
+.registratrion:hover {
+  cursor: pointer;
+}
+
+/* css modal window of registration */
+
+.myModal {
+  z-index: 3;
+  background-color: white;
+  border-radius: 5px;
+  width: 50%;
+  max-width: 500px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+}
+
+.main-info, .buttons-submit {
+  padding: 2px;
+  min-height: 100px;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons-submit {
+  min-height: 50px;
+}
+
+.button-end-form {
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.button-end-form:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный цвет */
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.error-message {
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.hidden-er {
+  visibility: visible;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 400px)
+{
+  .buttons-submit {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 800px)
+{
+  .main-info {
+    flex-direction: column;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.scroll {
+  overflow: hidden;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0px;
+  }
+  50% {
+    box-shadow: 0px 0px 20px #ac4437;
+  }
+  100% {
+    box-shadow: 0px;
+  }
+}
+
+@keyframes gradient {
+  /* infinity cycle */
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 16em 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .follow-img {
+    flex-direction: row;
+    gap: 0rem;
+    justify-content: space-between;
+  }
+}
+/* МЕГА КОСТЫЛЬ */
+@media (max-width: 1023.5px) {
+  .license-dop {
+    display: none;
+  }
+
+  .license {
+    margin-right: calc(50vw - 13px);
+    margin-left: auto;
+  }
+
+  .volonteers-bg {
+    /* background-color: #74c5ff; */
+    background-image: url(../img/Sections/volunteers-bg-small.png);
+  }
+
+  .boy-sec-bg {
+    /* background-color: #2580c1; */
+    background-image: url(../img/Sections/boy-blue-small.jpg);
+  }
+
+  .testimonials-bg {
+    /* background-color: #ff6d8d; */
+    margin-top: -5rem;
+    padding-top: 5rem;
+    background-image: url(../img/Sections/testimonials-bg-small.jpg);
+  }
+}
+
+@media (max-width: 375px) {
+  .license {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 750px) {
+  h1 {
+    text-align: left;
+    font-size: 5.6rem;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .logo,
+  .main-page {
+    max-width: 160px;
+  }
+
+  .donate-but {
+    padding: 1rem 3rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .img-in-section {
+    width: 50%;
+  }
+
+  .nav-menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+  }
+
+  .list-spisok {
+    display: flex;
+    flex-grow: 1;
+    max-width: 600px;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .donate-but {
+    display: block;
+  }
+
+  .volonteers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .volunter-info {
+    width: 50%;
+    max-width: 775px;
+  }
+
+  .white-lady-b-children {
+    width: 40%;
+  }
+
+  .b-children-sec {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .b-children-info {
+    width: 50%;
+    max-width: 590px;
+  }
+
+  .testiominals-h2 {
+    text-align: center;
+  }
+
+  .boy-sec {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .boy-sec-info {
+    width: 50%;
+    max-width: 548px;
+  }
+
+  .festival-sec {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .festival-sec-info {
+    width: 50%;
+    max-width: 589px;
+  }
+
+  .license {
+    display: block;
+    /* position: absolute; */
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .link-but {
+    margin-left: 0;
+  }
+
+  .long {
+    max-width: 284px;
+  }
+
+  .yellow-but {
+    display: block;
+  }
+
+  .medium {
+    max-width: 215px;
+  }
+
+  .link-but-last {
+    margin-left: auto;
+  }
+
+  .license {
+    margin-right: calc(50vw - 86px);
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .base-info {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .logo,
+  .main-page {
+    max-width: 260px;
+  }
+
+  .donate-but {
+    padding: 1.5rem 4.2rem;
+  }
+
+  .footer-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1920px;
+    margin: auto;
+    padding-top: 7rem;
+  }
+
+  .testim-control {
+    display: block;
+  }
+
+  .other-info {
+    /* align-items: left; */
+    justify-self: unset;
+  }
+
+  .footer-list {
+    display: flex;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .list-spisok {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .follow-img {
+    margin-top: 2.2rem;
+    margin-bottom: 5.5rem;
+  }
+
+  .follow {
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .img-in-footer-section {
+    margin-top: -3.5rem;
+  }
+
+  .license {
+    display: none;
+  }
+
+  .license-dop {
+    margin-top: 6.9rem;
+  }
+}
+
+@media (min-width: 1240px) {
+  h1 {
+    text-align: left;
+    font-size: 9.6rem;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 5.2rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .footer-list {
+    gap: 15rem;
+  }
+}
