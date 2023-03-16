@@ -68,13 +68,13 @@ function errors()
   s = "";
   if (mail.value === "") {
     errorMessage.classList.add("hidden-er");
-    s += "Почта обязательна для заполнения\n";
-    mail.setCustomValidity("Почта обязательна для заполнения\n");
+    s += "Почта обязательна для заполнения ";
+    mail.setCustomValidity("Почта обязательна для заполнения");
   }
   if (mail.validity.typeMismatch) {
     errorMessage.classList.add("hidden-er");
-    s += "Почта заполнена неправильно\n";
-    mail.setCustomValidity("Почта заполнена неправильно\n");
+    s += "Почта заполнена неправильно ";
+    mail.setCustomValidity("Почта заполнена неправильно");
   }
   if (pswd.value === "") {
     errorMessage.classList.add("hidden-er");
