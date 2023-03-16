@@ -86,7 +86,7 @@ function errors()
     pswd.setCustomValidity("Пароль должен быть не менее 6 символов");
   }
 
-  if (mail.value === "" || pswd.value === "" || pswd.value.length < 6 || mail.validity.typeMismatch) {
+  if (!mail.validity.required || !pswd.validity.required || !pswd.validity.tooShort || mail.validity.typeMismatch) {
     errorMessage.textContent = s;
   } else {
     errorMessage.classList.add("hidden-er");
