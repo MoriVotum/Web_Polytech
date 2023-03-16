@@ -31,7 +31,7 @@ reg.addEventListener("click", (e) => {
 overModal.addEventListener("click", (e) => {
   e.stopPropagation();
   alToggle();
-  errorMessage.classList.remove("hidden-er");
+  errorMessage.classList.add("hidden-er");
 });
 
 modal.addEventListener("click", (e) => {
@@ -52,7 +52,7 @@ formSend.addEventListener("submit", (e) => {
   console.log(data);
 
   alToggle();
-  errorMessage.classList.remove("hidden-er");
+  errorMessage.classList.add("hidden-er");
 });
 
 showPass.addEventListener("pointerdown", (e) => {
@@ -67,21 +67,21 @@ function errors()
 {
   s = "";
   if (mail.value === "") {
-    errorMessage.classList.add("hidden-er");
+    errorMessage.classList.remove("hidden-er");
     s += "Почта обязательна для заполнения ";
     mail.setCustomValidity("Почта обязательна для заполнения");
   }
   if (mail.validity.typeMismatch) {
-    errorMessage.classList.add("hidden-er");
+    errorMessage.classList.remove("hidden-er");
     s += "Почта заполнена неправильно ";
     mail.setCustomValidity("Почта заполнена неправильно");
   }
   if (pswd.value === "") {
-    errorMessage.classList.add("hidden-er");
+    errorMessage.classList.remove("hidden-er");
     s += "Пароль обязателен для заполнения ";
     pswd.setCustomValidity("Пароль обязателен для заполнения ");
   } else if (pswd.value.length < 6) {
-    errorMessage.classList.add("hidden-er");
+    errorMessage.classList.remove("hidden-er");
     s += "Пароль должен быть не менее 6 символов ";
     pswd.setCustomValidity("Пароль должен быть не менее 6 символов");
   }
@@ -89,7 +89,7 @@ function errors()
   if (mail.value === "" || pswd.value === "" || pswd.value.length < 6 || mail.validity.typeMismatch) {
     errorMessage.textContent = s;
   } else {
-    errorMessage.classList.remove("hidden-er");
+    errorMessage.classList.add("hidden-er");
     pswd.setCustomValidity("");
     mail.setCustomValidity("");
   }

@@ -497,13 +497,13 @@ footer {
   color: #fff;
   border-radius: 4px;
   text-align: center;
-  visibility: hidden;
-}
-
-.hidden-er {
   visibility: visible;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.hidden-er {
+  visibility: hidden;
 }
 
 @media (max-width: 400px)
