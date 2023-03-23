@@ -75,66 +75,39 @@ scene.add(sphere);
 // pyramid
 
 // Создание вершин треугольной пирамиды
-const verticesPyr = [
-  0, 4, 0,  // вершина пирамиды
-  -2, 0, 2, // левая точка треугольника
-  2, 0, 2,  // правая точка треугольника
-  2, 0, -2, // нижняя точка треугольника
-  -2, 0, -2 // верхняя точка треугольника
-];
+const verticesPyr = new Float32Array([
+  -0.000000, 0.000000, 3.600000,
+  -3.600000, 0.000000, -0.000000,
+  0.000000, 0.000000, -3.600000,
 
-const indicesPyr = [
-  0, 1, 2,  // передняя грань
-  0, 2, 3,  // правая грань
-  0, 3, 4,  // задняя грань
-  0, 4, 1,  // левая грань
-  1, 2, 3,  // нижняя грань
-  3, 4, 1   // верхняя грань
-];
+  3.600000, 0.000000, 0.000000,
+  -0.000000, 0.000000, 3.600000,
+  0.000000, 0.000000, -3.600000,
 
-const normalsPyr = [
-  // нормали передней грани
-  0, 0.4472, 0.8944,
-  0, 0.4472, 0.8944,
-  0, 0.4472, 0.8944,
+  0.000000, 8.137500, 0.000000,
+  3.600000, 0.000000, 0.000000,
+  0.000000, 0.000000, -3.600000,
 
-  // нормали правой грани
-  0.8944, 0.4472, 0,
-  0.8944, 0.4472, 0,
-  0.8944, 0.4472, 0,
+  0.000000, 8.137500, 0.000000,
+  0.000000, 0.000000, -3.600000,
+  -3.600000, 0.000000, -0.000000,
 
-  // нормали задней грани
-  0, 0.4472, -0.8944,
-  0, 0.4472, -0.8944,
-  0, 0.4472, -0.8944,
+  0.000000, 8.137500, 0.000000,
+  -3.600000, 0.000000, -0.000000,
+  -0.000000, 0.000000, 3.600000,
 
-  // нормали левой грани
-  -0.8944, 0.4472, 0,
-  -0.8944, 0.4472, 0,
-  -0.8944, 0.4472, 0,
-
-  // нормали нижней грани
-  0, -1, 0,
-  0, -1, 0,
-  0, -1, 0,
-
-  // нормали верхней грани
-  0, 1, 0,
-  0, 1, 0,
-  0, 1, 0,
-];
+  -0.000000, 0.000000, 3.600000,
+  3.600000, 0.000000, 0.000000,
+  0.000000, 8.137500, 0.000000
+])
 
 // Создание буферной геометрии
 const geometryPyr = new THREE.BufferGeometry();
-const indexBufferPyr = new THREE.BufferAttribute(new Uint16Array(indicesPyr), 1);
-
-geometryPyr.setAttribute('position', new THREE.Float32BufferAttribute(verticesPyr, 3));
-geometryPyr.setAttribute('normal', new THREE.Float32BufferAttribute(normalsPyr, 3));
-geometryPyr.setIndex(indicesPyr);
-geometryPyr.setIndex(indexBufferPyr);
+geometryPyr.setAttribute('position', new THREE.BufferAttribute(verticesPyr, 3));
+geometryPyr.computeVertexNormals();
 
 // Создание материала
-const materialPyr = new THREE.MeshBasicMaterial({ color: "#e6a7f1" });
+const materialPyr = new THREE.MeshPhongMaterial({ color: "#e6a7f1" });
 
 // Создание меша и добавление его на сцену
 const meshPyr = new THREE.Mesh(geometryPyr, materialPyr);
@@ -145,6 +118,7 @@ meshPyr.castShadow = true;
 meshPyr.receiveShadow = true;
 meshPyr.material.shadowSide = THREE.BackSide; 
 scene.add(meshPyr);
+
 
 // position and point the camera to the center of the scene
 camera.position.set(15, 20, 45);

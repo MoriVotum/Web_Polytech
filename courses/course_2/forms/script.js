@@ -63,30 +63,34 @@ showPass.addEventListener("pointerup", (e) => {
   pswd.type = "password";
 });
 
-function errors()
-{
+function errors() {
   s = "";
-  if (mail.value === "") {
+  if (mail.validity.valueMissing) {
     errorMessage.classList.remove("hidden-er");
     s += "Почта обязательна для заполнения ";
     mail.setCustomValidity("Почта обязательна для заполнения");
-  }
-  if (mail.validity.typeMismatch) {
+  } else if (mail.validity.typeMismatch) {
     errorMessage.classList.remove("hidden-er");
     s += "Почта заполнена неправильно ";
     mail.setCustomValidity("Почта заполнена неправильно");
-  }
-  if (pswd.value === "") {
+  } else mail.setCustomValidity("");
+
+  if (pswd.validity.valueMissing) {
     errorMessage.classList.remove("hidden-er");
     s += "Пароль обязателен для заполнения ";
     pswd.setCustomValidity("Пароль обязателен для заполнения ");
-  } else if (pswd.value.length < 6) {
+  } else if (pswd.validity.tooShort) {
     errorMessage.classList.remove("hidden-er");
     s += "Пароль должен быть не менее 6 символов ";
     pswd.setCustomValidity("Пароль должен быть не менее 6 символов");
-  }
+  } else pswd.setCustomValidity("");
 
-  if (!mail.validity.required || !pswd.validity.required || !pswd.validity.tooShort || mail.validity.typeMismatch) {
+  if (
+    mail.validity.valueMissing ||
+    pswd.validity.valueMissing ||
+    pswd.validity.tooShort ||
+    mail.validity.typeMismatch
+  ) {
     errorMessage.textContent = s;
   } else {
     errorMessage.classList.add("hidden-er");
