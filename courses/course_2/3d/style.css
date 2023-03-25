@@ -1,4 +1,41 @@
-body{
-    margin: 0;
-    overflow: hidden;
-  }
+body {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  margin: 0 auto;
+}
+
+.form-3d {
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.favcolor-not-work {
+  display: none;
+}
+
+.color-changer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.color-pick {
+  margin: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.light-changer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -8,6 +8,36 @@
     <title>Document</title>
   </head>
   <body>
+    <form class="form-3d">
+      <div class="color-changer">
+        <div class="color-pick">
+          <label for="cube">Куб:</label>
+          <input type="color" id="cube" name="favcolor" value="#d6224f" />
+        </div>
+
+        <div class="color-pick">
+          <label for="pyramid">Пирамида:</label>
+          <input type="color" id="pyramid" name="favcolor" value="#e6a7f1" />
+        </div>
+
+        <div class="color-pick">
+          <label for="sphere">Сфера:</label>
+          <input type="color" id="sphere" name="favcolor" value="#6574c9" />
+        </div>
+      </div>
+
+      <div class="light-changer">
+        <div>
+          <label for="allLight">Общий свет:</label>
+          <input type="checkbox" id="allLight" name="allLight" checked />
+        </div>
+
+        <div>
+          <label for="sunLight">Маленький лампочка:</label>
+          <input type="checkbox" id="sunLight" name="sunLight" checked/>
+        </div>
+      </div>
+    </form>
     <script src="./three.js"></script>
     <script src="./script.js"></script>
   </body>

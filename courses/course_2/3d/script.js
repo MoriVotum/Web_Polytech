@@ -1,3 +1,29 @@
+let colorCube = document.querySelector("#cube");
+let colorPyr = document.querySelector("#pyramid");
+let colorSphere = document.querySelector("#sphere");
+let allLight = document.querySelector("#allLight");
+let sunLight = document.querySelector("#sunLight");
+
+colorCube.addEventListener("input", () => {
+  cubeMaterial.color.set(colorCube.value);
+});
+
+colorPyr.addEventListener("input", () => {
+  materialPyr.color.set(colorPyr.value);
+});
+
+colorSphere.addEventListener("input", () => {
+  sphereMaterial.color.set(colorSphere.value);
+});
+
+allLight.addEventListener("click", () => {
+  spotLight.visible = allLight.checked;
+});
+
+sunLight.addEventListener("click", () => {
+  pointLight.visible = sunLight.checked;
+});
+
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(
   45,
@@ -8,15 +34,15 @@ let camera = new THREE.PerspectiveCamera(
 let renderer = new THREE.WebGLRenderer();
 
 // const controls = new OrbitControls(camera, renderer.domElement);
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth / 1.6, window.innerHeight / 1.6);
 document.body.appendChild(renderer.domElement);
 // renderer.shadowMapEnabled = true;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 // create the ground plane
-let planeGeometry = new THREE.PlaneGeometry(60, 35, 1, 1);
-let planeMaterial = new THREE.MeshLambertMaterial({ color: 0xffffff });
+let planeGeometry = new THREE.PlaneGeometry(60, 50, 1, 1);
+let planeMaterial = new THREE.MeshLambertMaterial({ color: "#7a7171" });
 let plane = new THREE.Mesh(planeGeometry, planeMaterial);
 plane.receiveShadow = true;
 
@@ -40,13 +66,13 @@ let vertices = new Float32Array([
 ]);
 
 mesh.setAttribute("position", new THREE.BufferAttribute(vertices, 3));
-let material_2 = new THREE.MeshBasicMaterial({ color: 0xc0c0c0 });
+let material_2 = new THREE.MeshBasicMaterial({ color: "#d3d0db" });
 let polygon = new THREE.Mesh(mesh, material_2);
 scene.add(polygon);
 
 // create a cube
 let cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
-let cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xff0000 });
+let cubeMaterial = new THREE.MeshLambertMaterial({ color: colorCube.value });
 let cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 cube.castShadow = true;
 
@@ -59,7 +85,9 @@ cube.position.z = 0;
 scene.add(cube);
 
 let sphereGeometry = new THREE.SphereGeometry(4, 20, 20);
-let sphereMaterial = new THREE.MeshLambertMaterial({ color: 0x7777ff });
+let sphereMaterial = new THREE.MeshLambertMaterial({
+  color: colorSphere.value,
+});
 let sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
 // position the sphere
@@ -75,74 +103,61 @@ scene.add(sphere);
 // pyramid
 
 // Создание вершин треугольной пирамиды
-const verticesPyr = new Float32Array([
-  -0.000000, 0.000000, 3.600000,
-  -3.600000, 0.000000, -0.000000,
-  0.000000, 0.000000, -3.600000,
+let verticesPyr = new Float32Array([
+  -0.0, 0.0, 3.6, -3.6, 0.0, -0.0, 0.0, 0.0, -3.6,
 
-  3.600000, 0.000000, 0.000000,
-  -0.000000, 0.000000, 3.600000,
-  0.000000, 0.000000, -3.600000,
+  3.6, 0.0, 0.0, -0.0, 0.0, 3.6, 0.0, 0.0, -3.6,
 
-  0.000000, 8.137500, 0.000000,
-  3.600000, 0.000000, 0.000000,
-  0.000000, 0.000000, -3.600000,
+  0.0, 8.1375, 0.0, 3.6, 0.0, 0.0, 0.0, 0.0, -3.6,
 
-  0.000000, 8.137500, 0.000000,
-  0.000000, 0.000000, -3.600000,
-  -3.600000, 0.000000, -0.000000,
+  0.0, 8.1375, 0.0, 0.0, 0.0, -3.6, -3.6, 0.0, -0.0,
 
-  0.000000, 8.137500, 0.000000,
-  -3.600000, 0.000000, -0.000000,
-  -0.000000, 0.000000, 3.600000,
+  0.0, 8.1375, 0.0, -3.6, 0.0, -0.0, -0.0, 0.0, 3.6,
 
-  -0.000000, 0.000000, 3.600000,
-  3.600000, 0.000000, 0.000000,
-  0.000000, 8.137500, 0.000000
-])
+  -0.0, 0.0, 3.6, 3.6, 0.0, 0.0, 0.0, 8.1375, 0.0,
+]);
 
 // Создание буферной геометрии
-const geometryPyr = new THREE.BufferGeometry();
-geometryPyr.setAttribute('position', new THREE.BufferAttribute(verticesPyr, 3));
+let geometryPyr = new THREE.BufferGeometry();
+geometryPyr.setAttribute("position", new THREE.BufferAttribute(verticesPyr, 3));
 geometryPyr.computeVertexNormals();
 
 // Создание материала
-const materialPyr = new THREE.MeshPhongMaterial({ color: "#e6a7f1" });
+let materialPyr = new THREE.MeshPhongMaterial({ color: colorPyr.value });
 
 // Создание меша и добавление его на сцену
-const meshPyr = new THREE.Mesh(geometryPyr, materialPyr);
+let meshPyr = new THREE.Mesh(geometryPyr, materialPyr);
 meshPyr.position.z = 10;
 meshPyr.position.y = 0;
 meshPyr.position.x = 15;
 meshPyr.castShadow = true;
 meshPyr.receiveShadow = true;
-meshPyr.material.shadowSide = THREE.BackSide; 
+meshPyr.material.shadowSide = THREE.BackSide;
 scene.add(meshPyr);
-
 
 // position and point the camera to the center of the scene
 camera.position.set(15, 20, 45);
 camera.rotation.x = -0.3;
 
 // add subtle ambient lighting
-let spotLight = new THREE.AmbientLight('lightblue');
-spotLight.position.set(0, 100, 0);
+let spotLight = new THREE.SpotLight("#73aec9", 1.1);
+spotLight.position.set(15, 70, 10);
 spotLight.castShadow = true;
+spotLight.visible = allLight.checked;
 scene.add(spotLight);
 
 // add spotlight for the shadows
 let pointLight = new THREE.PointLight(0xffffff, 1);
-pointLight.position.set(60, 60, 20);
+pointLight.position.set(100, 100, 50);
 pointLight.castShadow = true;
-
+pointLight.visible = sunLight.checked;
 scene.add(pointLight);
 
 // call the render function
 let step = 0;
 
 // const helper = new THREE.CameraHelper(spotLight.shadow.camera);
-// const helper2 = new THREE.CameraHelper(pointLight.shadow.camera);
-// scene.add(helper, helper2);
+// scene.add(helper);
 
 function render() {
   // rotate the cube around its axes
