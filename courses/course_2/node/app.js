@@ -27,9 +27,9 @@ server.on("request", (req, res) => {
     if (req.url === "/stats") {
       res.setHeader("Content-Type", "text/html");
       let html = "<table>\n";
-      html += "<tr>";
-      html += `<td>user-agent</td>`;
-      html += `<td>${requests["user-agent"]}</td>`;
+      html += "<tr>\n";
+      html += `<td>user-agent</td>\n`;
+      html += `<td>${requests["user-agent"]}</td>\n`;
       html += "</tr>\n";
       html += "</table>\n";
       res.end(html);
