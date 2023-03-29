@@ -5,7 +5,8 @@ const port = 3000;
 const server = http.createServer();
 
 let comments = ["Типа раз", "Tipo dva", "Just three"];
-let requests = { "user-agent": 0 };
+let requests = {};
+let name = "";
 
 server.listen(port, host, () => {
   console.log(`Server running at http://${host}:${port}/`);
@@ -18,33 +19,51 @@ server.on("connection", () => {
 
 server.on("request", (req, res) => {
   console.log("ZAPROS");
+  name = req.headers["user-agent"];
+  if (requests[name]) requests[name] += 1;
+  else requests[name] = 1;
 
-  if (req.method === "GET") {
-    if (req.url === "/") {
+  if (req.url === "/") {
+    if (req.method === "GET") {
       res.setHeader("Content-Type", "text/plain");
       res.end("Hello world!\n");
+    } else {
+      res.statusCode = 400;
+      res.end("400 Bad Request\n");
     }
-    if (req.url === "/stats") {
+  } else if (req.url === "/stats") {
+    if (req.method === "GET") {
       res.setHeader("Content-Type", "text/html");
       let html = "<table>\n";
-      html += "<tr>\n";
-      html += `<td>user-agent</td>\n`;
-      html += `<td>${requests["user-agent"]}</td>\n`;
-      html += "</tr>\n";
+      for (const key in requests) {
+        html += "<tr>\n";
+        html += `<td>${key}</td>\n`;
+        html += `<td>${requests[key]}</td>\n`;
+        html += "</tr>\n";
+      }
       html += "</table>\n";
       res.end(html);
+    } else {
+      res.statusCode = 400;
+      res.end("400 Bad Request\n");
     }
-  } else if (req.method === "POST") {
-    if (req.url === "/comments") {
-      res.setHeader("Content-Type", "application/json");
-      res.end(JSON.stringify(comments));
+  } else if (req.url === "/comments") {
+    if (req.method === "POST") {
+      let data = "";
+      req.on("data", (chunk) => {
+        data += chunk;
+      });
+      req.on("end", () => {
+        if (data) comments.push(data);
+        res.setHeader("Content-Type", "application/json");
+        res.end(JSON.stringify(comments));
+      });
+    } else {
+      res.statusCode = 400;
+      res.end("400 Bad Request\n");
     }
-  }
-
-  if (!res.writableEnded) {
+  } else {
     res.statusCode = 400;
     res.end("400 Bad Request\n");
-  } else {
-    requests["user-agent"] += 1;
   }
 });
