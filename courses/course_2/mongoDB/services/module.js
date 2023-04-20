@@ -85,7 +85,7 @@ const validateHandler = (req, res, next) => {
 
   // req.on("end", () => {
   if (data) {
-    console.log("ValidateData:", data);
+    // console.log("ValidateData:", data);
     if (data.name && data.text) {
       next();
     } else {
