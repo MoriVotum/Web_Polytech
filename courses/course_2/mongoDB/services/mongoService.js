@@ -36,6 +36,7 @@ async function insertItem(collectionName, document) {
   const collection = db.collection(collectionName);
   document = { ...document, date: new Date() };
   let result = await collection.insertOne(document);
+  // result - to get all comments
   result = await collection.find().toArray();
   return result;
 }

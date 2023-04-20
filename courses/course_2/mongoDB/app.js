@@ -13,13 +13,15 @@ app.listen(port, () => {
   console.log(`Server is started with ip: 127.0.0.1 and port: ${port}`);
 });
 
+app.use(express.json());
+
 app.use(morgan("dev"));
 app.use(helmet());
 // app.use(express.json());
 
 app.use("/static", express.static(path.resolve(__dirname, "static")));
 app.use("/public", express.static(path.resolve(__dirname, "public")));
-app.use("/v1/user", controller);
+app.use("/v2/user", controller);
 app.use(globalController);
 
 // app.get('/', (req, res) => {

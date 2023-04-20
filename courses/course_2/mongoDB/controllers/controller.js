@@ -8,6 +8,7 @@ import {
   allHandler,
   userHandler,
   apiHandler,
+  validateHandler,
 } from "../services/module.js";
 import { commentsHandler, commentHandler, addComment } from "./controllerDb.js";
 
@@ -25,7 +26,7 @@ router.use("/reg", userHandler);
 
 router.get("/comments", commentsHandler);
 
-router.post("/comments", addComment);
+router.post("/comments", validateHandler, addComment);
 
 router.get("/comments/:id", commentHandler);
 

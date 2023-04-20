@@ -27,18 +27,17 @@ const addComment = (req, res) => {
   console.log("addComment");
 
   let data = "";
-  req.on("data", (chunk) => {
-    data += chunk;
-  });
-  req.on("end", () => {
-    if (data) {
-      //   res.send(JSON.parse(data));
-      insertItem("comments", JSON.parse(data)).then((result) => {
-        console.log(result);
-        res.json(result);
-      });
-    }
-  });
+  data = req.body;
+  if (data) {
+    console.log("data:", data);
+    //   res.send(JSON.parse(data));
+    insertItem("comments", data).then((result) => {
+      console.log(result);
+      res.json(result);
+    });
+  } else {
+    res.sendStatus(400, "400 Bad Request");
+  }
 };
 
 export { commentsHandler, commentHandler, addComment };

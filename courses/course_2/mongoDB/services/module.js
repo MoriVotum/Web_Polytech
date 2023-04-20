@@ -17,9 +17,7 @@ const requestsHandler = (req, res, next) => {
 
 const commentsHandler = (req, res) => {
   let data = "";
-  req.on("data", (chunk) => {
-    data += chunk;
-  });
+  data = req.body();
   req.on("end", () => {
     if (data) comments.push(data);
     res.json(comments);
@@ -76,6 +74,30 @@ const apiHandler = (req, res, next) => {
   next();
 };
 
+const validateHandler = (req, res, next) => {
+  console.log("validateHandler");
+
+  let data = "";
+  // req.on("data", (chunk) => {
+  //   data += chunk;
+  // });
+  data = req.body;
+
+  // req.on("end", () => {
+  if (data) {
+    console.log("ValidateData:", data);
+    if (data.name && data.text) {
+      next();
+    } else {
+      res.sendStatus(400, "400 Bad Request");
+    }
+  } else {
+    res.sendStatus(400, "400 Bad Request");
+  }
+  // });
+  // next();
+};
+
 export {
   rootHandler,
   commentsHandler,
@@ -84,4 +106,5 @@ export {
   allHandler,
   userHandler,
   apiHandler,
+  validateHandler,
 };
