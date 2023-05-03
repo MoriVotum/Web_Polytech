@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import controller from "./controllers/controller.js";
 import globalController from "./controllers/globalController.js";
+import { errorsController } from "./controllers/errors.js";
 import morgan from "morgan";
 import helmet from "helmet";
 
@@ -23,6 +24,7 @@ app.use("/static", express.static(path.resolve(__dirname, "static")));
 app.use("/public", express.static(path.resolve(__dirname, "public")));
 app.use("/v3/user", controller);
 app.use(globalController);
+app.use(errorsController);
 
 // app.get('/', (req, res) => {
 //   // res.send('<h1>Hello Express!</h1>')
