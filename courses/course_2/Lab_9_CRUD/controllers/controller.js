@@ -10,7 +10,19 @@ import {
   apiHandler,
   validateHandler,
 } from "../services/module.js";
-import { commentsHandler, commentHandler, addComment } from "./controllerDb.js";
+import {
+  commentsHandler,
+  commentHandler,
+  addComment,
+  createModel,
+  getApiKey,
+  authGuard,
+  changeModel,
+  removeModel,
+  removeApiKey,
+  modelsHandler,
+  modelHandler,
+} from "./controllerDb.js";
 
 const router = Router();
 
@@ -22,8 +34,6 @@ router.use("/login", userHandler, apiHandler);
 
 router.use("/reg", userHandler);
 
-// router.use("/login", apiHandler);
-
 router.get("/comments", commentsHandler);
 
 router.post("/comments", validateHandler, addComment);
@@ -31,6 +41,22 @@ router.post("/comments", validateHandler, addComment);
 router.get("/comments/:id", commentHandler);
 
 router.get("/stats", statsHandler);
+
+// new api
+
+router.post("/addUser", getApiKey);
+
+router.delete("/removeUser", removeApiKey);
+
+router.post("/models", authGuard, createModel);
+
+router.put("/models/:id", authGuard, changeModel);
+
+router.delete("/models/:id", authGuard, removeModel);
+
+router.get("/models", modelsHandler);
+
+router.get("/models/:id", modelHandler);
 
 router.all("*", allHandler);
 

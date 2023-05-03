@@ -21,7 +21,7 @@ app.use(helmet());
 
 app.use("/static", express.static(path.resolve(__dirname, "static")));
 app.use("/public", express.static(path.resolve(__dirname, "public")));
-app.use("/v2/user", controller);
+app.use("/v3/user", controller);
 app.use(globalController);
 
 // app.get('/', (req, res) => {
