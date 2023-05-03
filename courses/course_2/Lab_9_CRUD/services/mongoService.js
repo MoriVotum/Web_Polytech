@@ -12,22 +12,26 @@ connectToMongoDB()
 console.log("db:", db);
 
 async function findItems(collectionName, query) {
-  const collection = db.collection(collectionName);
-  const result = await collection.find(query).toArray();
-  return result;
+  try {
+    const collection = db.collection(collectionName);
+    const result = await collection.find(query).toArray();
+    return result;
+  } catch (err) {
+    return err;
+  }
 }
 
 async function findItem(collectionName, query) {
   // const db = await connect();
-  console.log("query:", query);
-  const collection = db.collection(collectionName);
-  let result = null;
   try {
+    console.log("query:", query);
+    const collection = db.collection(collectionName);
+    let result = null;
     result = await collection.findOne({ _id: new ObjectId(query) });
+    return result;
   } catch (err) {
-    console.log(err);
+    return err;
   }
-  return result;
 }
 
 async function insertItem(collectionName, document) {

@@ -12,39 +12,51 @@ import {
 } from "../services/mongoService.js";
 
 const commentsHandler = (req, res) => {
-  console.log("commentsHandler");
+  try {
+    console.log("commentsHandler");
 
-  findItems("comments", {}).then((result) => {
-    // console.log(result);
-    res.json(result);
-  });
+    findItems("comments", {}).then((result) => {
+      // console.log(result);
+      res.json(result);
+    });
+  } catch (err) {
+    next(err);
+  }
 };
 
 const commentHandler = (req, res) => {
-  console.log("commentHandler");
+  try {
+    console.log("commentHandler");
 
-  let id = req.params.id;
+    let id = req.params.id;
 
-  if (id) {
-    findItem("comments", id).then((result) => {
-      //   console.log(result);
-      if (result == null) res.sendStatus(404, "404 Not Found");
-      else res.json(result);
-    });
+    if (id) {
+      findItem("comments", id).then((result) => {
+        //   console.log(result);
+        if (result == null) res.sendStatus(404, "404 Not Found");
+        else res.json(result);
+      });
+    }
+  } catch (err) {
+    next(err);
   }
 };
 
 const addComment = (req, res) => {
-  console.log("addComment");
+  try {
+    console.log("addComment");
 
-  let data = "";
-  data = req.body;
-  if (data) {
-    insertItem("comments", data).then((result) => {
-      res.json(result);
-    });
-  } else {
-    res.sendStatus(400, "400 Bad Request");
+    let data = "";
+    data = req.body;
+    if (data) {
+      insertItem("comments", data).then((result) => {
+        res.json(result);
+      });
+    } else {
+      res.sendStatus(400, "400 Bad Request");
+    }
+  } catch (err) {
+    next(err);
   }
 };
 
