@@ -61,8 +61,6 @@ paths:
         200:
           description: sends an array of comment objects
     post:
-      security:
-        - apikey: []
       tags: [Comments]
       summary: create new comment
       description: create comment
