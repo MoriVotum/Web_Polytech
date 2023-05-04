@@ -82,7 +82,7 @@ paths:
         - text/plain
       responses:
         200:
-          description: sends text "comment create"
+          description: create comment
 
   /comments/{id}:
     get:
