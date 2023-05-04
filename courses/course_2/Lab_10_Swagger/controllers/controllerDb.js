@@ -32,7 +32,7 @@ const commentHandler = (req, res) => {
 
     if (id) {
       findItem("comments", id).then((result) => {
-        //   console.log(result);
+          console.log(result);
         if (result == null) res.sendStatus(404, "404 Not Found");
         else res.json(result);
       });
@@ -175,6 +175,7 @@ const removeModel = (req, res, next) => {
     next(err);
   }
 };
+
 
 const modelsHandler = (req, res, next) => {
   try {

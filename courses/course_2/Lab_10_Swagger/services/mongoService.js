@@ -26,11 +26,12 @@ async function findItem(collectionName, query) {
   try {
     console.log("query:", query);
     const collection = db.collection(collectionName);
-    let result = null;
-    result = await collection.findOne({ _id: new ObjectId(query) });
+    const result = await collection.findOne({ _id: new ObjectId(query) });
+    console.log("result:", result);
     return result;
   } catch (err) {
-    return err;
+    console.log("ERROR:", err);
+    return null;
   }
 }
 
@@ -62,6 +63,7 @@ async function deleteApikey(collectionName, key) {
     console.log("deleteApikey", key);
     const collection = db.collection(collectionName);
     const result = await collection.deleteOne({ api_key: Number(key) });
+    console.log("result:", result);
     if (result.deletedCount == 0) return null;
     console.log("result:", result);
     return result;

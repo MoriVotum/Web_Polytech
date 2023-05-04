@@ -33,7 +33,7 @@ const swaggerOptions = {
     tags: [
       {
         name: "Root",
-        description: "Root page",
+        description: "CRUD in Root",
       },
       {
         name: "Models",

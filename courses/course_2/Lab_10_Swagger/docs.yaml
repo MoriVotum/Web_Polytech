@@ -49,6 +49,8 @@ paths:
       responses:
         200:
           description: deleted your apikey
+        404:
+          description: Not Found API-Key with this id
 
   /comments:
     get:
@@ -81,6 +83,8 @@ paths:
       responses:
         200:
           description: create comment
+        500:
+          description: unvalidated data send
 
   /comments/{id}:
     get:
@@ -96,6 +100,8 @@ paths:
       responses:
         200:
           description: sends json comment
+        404:
+          description: 404 Not Found Model with this id
 
   /models:
     get:
@@ -143,17 +149,21 @@ paths:
               comments:
                 type: string
             example:
-              name: "Desire"
-              name_model: "Some model"
-              type: "no type"
+              name: "desire"
+              name_model: "model"
+              type: "zxc"
               model: {}
-              descriptions: "no description"
-              comments: "some comments"
+              description: "description"
+              comments: ["good"]
       produces:
         - text/plain
       responses:
         200:
           description: model is updated
+        500:
+          description: unvalidated data send
+        401:
+          description: unauthorized API key
 
   /models/{id}:
     get:
@@ -243,6 +253,10 @@ paths:
       responses:
         200:
           description: update model
+        500:
+          description: unvalidated data send
+        401:
+          description: unauthorized API key
     delete:
       security:
         - apikey: []
@@ -255,3 +269,24 @@ paths:
           type: string
           required: true
           description: Number ID of the model to get.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              acknowledged:
+                type: bool
+              deletedCount:
+                type: int
+            example:
+              acknowledged: true;
+              deletedCount: 1
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: update model
+        500:
+          description: unvalidated data send
+        401:
+          description: unauthorized API key
