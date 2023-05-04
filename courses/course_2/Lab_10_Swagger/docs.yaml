@@ -111,14 +111,14 @@ paths:
           description: sends an array of models objects
           content:
             application/json:
-              schema:      # Request body contents
+              schema: # Request body contents
                 type: object
                 properties:
                   _id:
                     type: string
                   name_model:
                     type: string
-              example:   # Sample object
+              example: # Sample object
                 _id: "13889023"
                 name_model: "No name module"
     post:
@@ -173,7 +173,7 @@ paths:
           description: sends json model
           content:
             application/json:
-              schema:      # Request body contents
+              schema: # Request body contents
                 type: object
                 properties:
                   _id:
@@ -194,7 +194,7 @@ paths:
                     type: string
                   last_update:
                     type: string
-              example:   # Sample object
+              example: # Sample object
                 _id: 10
                 name: "Desire"
                 name_model: "no"
