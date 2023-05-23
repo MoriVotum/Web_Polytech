@@ -8,7 +8,8 @@ console.log("getApiKey:", getApiKey);
 
 let apiKey = "";
 
-getApiKey.addEventListener("click", () => {
+getApiKey.addEventListener("click", (e) => {
+  e.preventDefault();
   console.log("getApiKey");
   const name = loginName.value;
   console.log("name:", name);
@@ -35,13 +36,15 @@ getApiKey.addEventListener("click", () => {
     });
 });
 
-loginName.addEventListener("keydown", (e) => {
-  console.log("e.key:", e.key);
-  if (e.key == "Enter") {
-    console.log("Enter");
-    getApiKey.click();
-  }
-});
+// когда не было формы
+
+// loginName.addEventListener("keydown", (e) => {
+//   console.log("e.key:", e.key);
+//   if (e.key == "Enter") {
+//     console.log("Enter");
+//     getApiKey.click();
+//   }
+// });
 
 function getAllModels() {
   fetch(`/v3/user/models`)
