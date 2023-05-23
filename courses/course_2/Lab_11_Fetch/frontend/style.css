@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 
 html {
   max-width: 70ch;
@@ -6,7 +6,7 @@ html {
   margin: auto;
   line-height: 1.75;
   font-size: 1.25em;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 h1,
@@ -76,8 +76,8 @@ button:hover {
 }
 
 /* beautiful input */
-input[type=text],
-input[type=password] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 10px 20px;
   margin: 8px 0;
