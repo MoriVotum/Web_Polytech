@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 3em 0 1em;
+}
+
+p,
+ul,
+ol {
+  margin-bottom: 2em;
+  color: #1d1d1d;
+  font-family: sans-serif;
+}
+
+/* beautiful table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* beautiful button */
+button {
+  background-color: #8ea5c4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #5c7ea5;
+  cursor: pointer;
+  animation: button-animation 0.3s ease-in-out;
+}
+
+/* button animation */
+@keyframes button-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* beautiful input */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.models > tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.models > tr > div {
+  display: flex;
+}
+
+.models > tr > div > button {
+  margin: auto 0.5em;
+}
+
+.modal_model {
+  /* display: none;  */
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease-in-out;
+
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgb(0, 0, 0); /* Цвет запасной вариант */
+  background-color: rgba(0, 0, 0, 0.4); /* Черный с непрозрачностью */
+}
+
+.modal_hidden {
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Модальное содержание/коробка */
+.modal_model__content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
+  height: 70%;
+}
+
+.edit_model {
+  display: grid;
+  /* two part by 48% width */
+  grid-template-columns: 30% 60%;
+  grid-gap: 2.5em;
+}
+
+.modal_model__content__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal_model__content__header > h2 {
+  margin: 0;
+}
+
+.form_model {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form_model > label {
+  margin-bottom: 0.5em;
+}
+
+.form_model > input {
+  margin-bottom: 1em;
+}
+
+.form_model > button {
+  margin-top: 1em;
+
+  align-self: flex-end;
+
+  width: 100px;
+}
+
+/* beutiful input, select, colorpicker */
+.form_model > label > input,
+.form_model > label > select {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .models > tr {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+}

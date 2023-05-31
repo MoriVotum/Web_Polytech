@@ -1,0 +1,44 @@
+    definition: {
+        openapi: "3.0.0",
+        info:{
+            title: "Documentations",
+            version: "1.0.0",
+            contact: {
+                name: "vpbuyanov",
+                url: "https://t.me/vpbuyanov",
+                email: "mors@nemors.ru",
+            },
+        },
+        servers: [
+            {
+                url: `${config.hosting}/api/v3`
+            },
+            {
+                url: `${config.hosting}/api/v2`
+            },
+            {
+                url: `${config.hosting}/api/v1`
+            },
+        ],
+        tags:[
+            {
+                name: "API",
+                description: "create and delete apikey",
+            },
+            {
+                name: "Models",
+                description: "CRUD in models",
+            },
+            {
+                name: "Comments",
+                description: "CRUD in comments",
+            },
+            {
+                name: "Home",
+                description: "Home page",
+            },
+        ],
+        host: `${config.hosting}`,
+
+    },
+    apis: ['./documentations.yaml']

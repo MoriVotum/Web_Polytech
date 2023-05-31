@@ -1,0 +1,292 @@
+components:
+  securitySchemes:
+    apikey:
+      type: apiKey
+      in: header
+      name: api_key
+
+paths:
+  /:
+    get:
+      summary: home page
+      tags: [Root]
+      description: send plain text "Hello world!"
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: send "Hello world!" and status code 200
+
+  /addUser:
+    post:
+      tags: [User]
+      summary: create apikey
+      description: create apikey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+            example:
+              name: Desire
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: sends your apikey
+
+  /removeUser:
+    delete:
+      tags: [User]
+      security:
+        - apikey: []
+      summary: delete apikey
+      description: delete apikey
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: deleted your apikey
+        404:
+          description: Not Found API-Key with this id
+
+  /comments:
+    get:
+      tags: [Comments]
+      summary: see all comments
+      description: return all comments
+      produces:
+        - application/json
+      responses:
+        200:
+          description: sends an array of comment objects
+    post:
+      tags: [Comments]
+      summary: create new comment
+      description: create comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+              text:
+                type: string
+            example:
+              name: Desire
+              text: some comment
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: create comment
+        500:
+          description: unvalidated data send
+
+  /comments/{id}:
+    get:
+      tags: [Comments]
+      summary: get comment by id
+      description: return comment
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: Number of ID to the comment will get.
+      responses:
+        200:
+          description: sends json comment
+        404:
+          description: 404 Not Found Model with this id
+
+  /models:
+    get:
+      tags: [Models]
+      summary: see all models
+      description: return all models with their names and id
+      produces:
+        - application/json
+      responses:
+        200:
+          description: sends an array of models objects
+          content:
+            application/json:
+              schema: # Request body contents
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  name_model:
+                    type: string
+              example: # Sample object
+                _id: "13889023"
+                name_model: "No name module"
+    post:
+      security:
+        - apikey: []
+      tags: [Models]
+      summary: create new model
+      description: create model
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+              name_model:
+                type: string
+              type:
+                type: string
+              model:
+                type: object
+              descriptions:
+                type: string
+              comments:
+                type: string
+            example:
+              name: "desire"
+              name_model: "model"
+              type: "zxc"
+              model: {}
+              description: "description"
+              comments: ["good"]
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: model is updated
+        500:
+          description: unvalidated data send
+        401:
+          description: unauthorized API key
+
+  /models/{id}:
+    get:
+      summary: get model by id
+      tags: [Models]
+      description: return model
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: Numeric ID of the model to get.
+      responses:
+        200:
+          description: sends json model
+          content:
+            application/json:
+              schema: # Request body contents
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  name:
+                    type: string
+                  name_model:
+                    type: string
+                  type:
+                    type: string
+                  model:
+                    type: object
+                  descriptions:
+                    type: string
+                  comments:
+                    type: string
+                  time_create:
+                    type: string
+                  last_update:
+                    type: string
+              example: # Sample object
+                _id: 10
+                name: "Desire"
+                name_model: "no"
+                type: "no type"
+                model: {}
+                descriptions: "hehe"
+                comments: "no comments"
+                time_create: 2023-04-27T10:09:21.597Z
+                last_update: 2023-04-27T10:09:21.597Z
+    put:
+      security:
+        - apikey: []
+      tags: [Models]
+      summary: update model
+      description: update model
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: Number ID of the model to get.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              name:
+                type: string
+              name_model:
+                type: string
+              type:
+                type: string
+              model:
+                type: object
+              descriptions:
+                type: string
+              comments:
+                type: array
+            example:
+              name: "desire"
+              name_model: "model"
+              type: "zxc"
+              model: {}
+              description: "description"
+              comments: ["good"]
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: update model
+        500:
+          description: unvalidated data send
+        401:
+          description: unauthorized API key
+    delete:
+      security:
+        - apikey: []
+      tags: [Models]
+      summary: delete model
+      description: delete model
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: Number ID of the model to get.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              acknowledged:
+                type: bool
+              deletedCount:
+                type: int
+            example:
+              acknowledged: true;
+              deletedCount: 1
+      produces:
+        - text/plain
+      responses:
+        200:
+          description: update model
+        500:
+          description: unvalidated data send
+        401:
+          description: unauthorized API key
