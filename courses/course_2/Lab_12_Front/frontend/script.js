@@ -191,7 +191,10 @@ submit_model.addEventListener("click", (e) => {
 modal_model.addEventListener("click", (e) => {
   console.log("modal_model click");
   console.log("e.target:", e.target);
-  if (e.target.classList.contains("close_modal")) {
+  if (
+    e.target.classList.contains("close_modal") ||
+    e.target.classList.contains("modal_model")
+  ) {
     console.log("close_modal");
     modal_model.classList.add("modal_hidden");
     shouldStop = true;
