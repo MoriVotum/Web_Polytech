@@ -22,8 +22,30 @@ let newColor;
 let size;
 let scale;
 let x;
+let id;
+let type_bd = "create";
+
+create.addEventListener("click", () => {
+  console.log("x:", x);
+  modal_model.classList.remove("modal_hidden");
+  model_name.value = "";
+  if (jsonmodel instanceof THREE.BoxGeometry) {
+    model_type.value = "cube";
+  } else if (jsonmodel instanceof THREE.SphereGeometry) {
+    model_type.value = "sphere";
+  }
+  if (model_size.value === "") {
+    model_size.value = 4;
+    size = model_size.value;
+    x = 1;
+  }
+  model_color.value = "#" + jsonmodel.material.color.getHexString();
+  type_bd = "create";
+});
 
 model_type.addEventListener("change", () => {
+  scale = model_size.value / size;
+  x = 1;
   console.log("model_type:", model_type.value);
   if (model_type.value === "sphere") {
     const geometry = new THREE.SphereGeometry(model_size.value, 32, 32);
@@ -107,25 +129,63 @@ submit_model.addEventListener("click", (e) => {
   };
 
   console.log("data:", data);
+  // const id = e.target.dataset.id;
+  console.log("id:", id);
 
-  fetch("/v3/user/models", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      api_key: apiKey,
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => {
-      console.log("response:", response);
-      return response.json();
+  console.log("type_bd:", type_bd);
+  if (type_bd === "change") {
+    fetch(`/v3/user/models/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        api_key: apiKey,
+      },
+      body: JSON.stringify(data),
     })
-    .then((data) => {
-      console.log("data:", data);
+      .then((response) => {
+        console.log("response:", response);
+        if (response.statusText == "Unauthorized") {
+          alert("Не авторизован");
+          return;
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("data:", data);
+        modal_model.classList.add("modal_hidden");
+        table.innerHTML = "";
+        getAllModels();
+      })
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  } else if (type_bd === "create") {
+    fetch(`/v3/user/models`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        api_key: apiKey,
+      },
+      body: JSON.stringify(data),
     })
-    .catch((err) => {
-      console.log("err:", err);
-    });
+      .then((response) => {
+        console.log("response:", response);
+        if (response.statusText == "Unauthorized") {
+          alert("Не авторизован");
+          return;
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("data:", data);
+        modal_model.classList.add("modal_hidden");
+        table.innerHTML = "";
+        getAllModels();
+      })
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  }
 });
 
 modal_model.addEventListener("click", (e) => {
@@ -171,16 +231,6 @@ getApiKey.addEventListener("click", (e) => {
       alert("Произошла ошибка при получении api_key");
     });
 });
-
-// когда не было формы
-
-// loginName.addEventListener("keydown", (e) => {
-//   console.log("e.key:", e.key);
-//   if (e.key == "Enter") {
-//     console.log("Enter");
-//     getApiKey.click();
-//   }
-// });
 
 function getAllModels() {
   fetch(`/v3/user/models`)
@@ -235,7 +285,7 @@ table.addEventListener("click", (e) => {
   console.log("e.target.dataset.id:", e.target.dataset.id);
   if (e.target.classList.contains("btn_show")) {
     console.log("show model");
-    const id = e.target.dataset.id;
+    id = e.target.dataset.id;
     console.log("id:", id);
     fetch(`/v3/user/models/${id}`)
       .then((response) => {
@@ -249,6 +299,8 @@ table.addEventListener("click", (e) => {
           return;
         }
         // show model
+        type_bd = "change";
+
         modal_model.classList.remove("modal_hidden");
         model_name.value = data.name_model;
         model_type.value = data.type;
@@ -273,6 +325,8 @@ table.addEventListener("click", (e) => {
         jsonmodel.position.x = display_model.clientWidth / 50;
         jsonmodel.position.y = 10;
         jsonmodel.position.z = 8;
+
+        console.log("x:", x);
       })
       .catch((err) => {
         console.log("err:", err);
@@ -281,7 +335,7 @@ table.addEventListener("click", (e) => {
   }
   if (e.target.classList.contains("btn_del")) {
     console.log("delete model");
-    const id = e.target.dataset.id;
+    id = e.target.dataset.id;
     console.log("id:", id);
     console.log("apiKey:", apiKey);
     fetch(`/v3/user/models/${id}`, {
@@ -327,37 +381,6 @@ refresh.addEventListener("click", () => {
 getAllModels();
 
 // THREE JS
-
-// let renderer = new THREE.WebGLRenderer({ antialias: true });
-// let scene = new THREE.Scene();
-
-// scene.background = new THREE.Color("#AAC789");
-
-// let camera = new THREE.PerspectiveCamera(
-//   60,
-//   display_model.innerWidth / display_model.innerHeight,
-//   1,
-//   1000
-// );
-
-// scene.add(camera);
-
-// renderer.setSize(display_model.innerWidth, display_model.innerHeight);
-// display_model.appendChild(renderer.domElement);
-
-// renderer.shadowMap.enabled = true;
-// renderer.render(scene, camera);
-
-// function model3d() {}
-
-// function render() {
-//   requestAnimationFrame(render);
-//   renderer.render(scene, camera);
-// }
-
-// render();
-
-// TEST THREE JS
 
 console.log("width", display_model.clientWidth);
 console.log("height", display_model.clientHeight);
